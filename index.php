@@ -18,14 +18,16 @@ require_once("config.inc");
 	<script>
 	$(document).ready(function(){
 	
-	$('#enter').click(function(){
-	console.log("enter clicked");
-	var quantity = $('#quantity').val();
-	var price = $('#price').val();
-	var tranamount= quantity * price;
-	console.log("price is " + price);
-	console.log("Quantity is " + quantity);
-	console.log("transaction amount = " + tranamount);
+	$('#btnLogin').click(function(){
+	console.log("login clicked ");
+	var name = $('#clerkName').val();
+	var pswd = $('#password').val();
+	$.get('validateLogin.php',{
+	name: name,
+	pswd: pswd
+	}, function(data) {
+		$('#actionArea').html(data);
+		})
 	
 	});
 	

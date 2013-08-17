@@ -1,6 +1,8 @@
 <?php
 require_once("connect.php");
-$sql = "select * from clerk where name= \"Frank C\" and password = \"/PJ7t85e\" ";
+$name = $_GET['name'];
+$pswd = $_GET['pswd'];
+$sql = "select * from clerk where name= \"$name\" and password = \"$pswd\" ";
 $result = mysql_query($sql);
 if(mysql_error() != ""){
 echo "Login is not valid " . mysql_error() . "<br /> " . $sql;
@@ -8,13 +10,17 @@ echo "Login is not valid " . mysql_error() . "<br /> " . $sql;
 $row= mysql_fetch_array($result);
 switch ($row['role']){
 	case "clk":
-	echo "this is a clerk";
+	echo "This is a clerk";
 	break;
 	case "mgr" :
-	echo "this is a manager";
+	echo "This is a manager";
 	break;
 	case "adm" :
-	echo "this is an administrator";
+	echo "This is an administrator";
+	break;
+	default:
+	echo "This is an invalid login";
+	
 	}
 
 
