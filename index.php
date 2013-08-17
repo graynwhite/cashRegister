@@ -1,3 +1,7 @@
+<?php
+require_once("config.inc");
+
+?>
 <!DOCTYPE html> 
 <html> 
 	<head>
@@ -35,13 +39,16 @@
 <body><div data-role=page id="mainPage" data-theme="b"/> 
 <div data-role="header" class="header"><h1>Gray and White Cash Register</h1></div>
 <div data-role="content">
+<h3><? echo $ORGNAME ?></h3>
+<div id="actionArea">
 <form name="login" action="">
   <label for="clerkName">Name</label>
   <input type="text" name="clerkName" id="clerkName" >
     <label for="password">Password</label>
     <input type="password" name="password" id="password">
-	<a href="http://www.graynwhite.com/cashRegister/register.html"><input type="button" name="btnLogin" id="btnLogin" value="login"></a>
-   
+	<input type="button" name="btnLogin" id="btnLogin" value="login">
+</form> 
+</div>  
 </div><!--End of content-->
 <div data-role=footer><h1>Gray and White Cash Register</h1></div>
 </div><!-- End of Page -->
