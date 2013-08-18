@@ -1,18 +1,20 @@
+<?php
+
+?>
 <!DOCTYPE html> 
 <html> 
 	<head>
 
 	<title>Cash Register Simulator</title> 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
-	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
-	<META HTTP-EQUIV="Expires" CONTENT="-1">
-	<link rel="stylesheet" href="//code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
-	<link rel="stylesheet" href="http://pjnews.mobi/peggyjo4.css"/>
-	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-	<script src="//code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+	<?php require_once('meta.inc');?>
 	<script>
 	$(document).ready(function(){
+	var headerClerkName = $.dough("clerkName");
+	console.log("got cookie " + headerClerkName);
+	$('#headerClerkName').val($.dough("clerkName"));
+	
+	$('#hiddenClerkName').val(headerClerkName);
+	
 	
 	$('#enter').click(function(){
 	console.log("enter clicked");
@@ -35,8 +37,12 @@
 <body><div data-role=page id="mainPage" data-theme="b"/> 
 <div data-role="header" class="header"><h1>Gray and White Cash Register</h1></div>
 <div data-role="content">
+<h3>Logged in as <script>$.dough("clerkName")</script> </h3>
+
 <form name="transaction" action="">
-  <label for="quantity">Number of items</label>
+	<input type="hidden" name="hiddenClerkName" value="" id="hiddenClerkName">
+	<input type="hidden" name="clerkId" value="<? echo $clerkId ?>">
+	  <label for="quantity">Number of items</label>
   <input type="number" name="quantity" id="quantity" value=1>
     <label for="plu">Price Lookup</label>
     <select name="plu" id="select">
@@ -85,7 +91,7 @@
 <input name="totalSoFar" type="text" id="totalSoFar">
 <input name="Next item"  id="nextItem" type="button">
 </div><!--End of content-->
-<div data-role=footer><h1>Subtotal<h1></div>
+<div data-role=footer><h1>Subtotal<h1></di>
 </div><!-- End of Page -->
 <!-- ========================== -->
 </body>
