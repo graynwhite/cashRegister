@@ -1,5 +1,29 @@
 <?php
-
+require_once("connect.php");
+$savedAs = $_COOKIE['clerkName'];
+$clerkId = $_COOKIE['clerkId'];
+$sql = "select * from PLU order by name";
+$result = mysql_query($sql);
+if(mysql_error() != ""){
+	echo "Trouble with mysql request " . mysql_error() . "<br />" . $sql;
+	quit;
+	}
+	$selectPhrase ='';
+	while($row=mysql_fetch_array($result)){
+	$selectPhrase .= "<option value=\"" . $row['id'] . "\">" . $row['name'] . "</option> \n";
+	}
+	
+$sql2="select * from department order by name";
+$result = mysql_query($sql2);
+if(mysql_error() != ""){
+	echo "Trouble with mysql request " . mysql_error() . "<br />" . $sql2;
+	quit;
+	}
+	$selectPhrase2 ='';
+	while($row=mysql_fetch_array($result)){
+	$selectPhrase2 .= "<option value=\"" . $row['id'] . "\">" . $row['name'] . "</option> \n";
+	}	
+	
 ?>
 <!DOCTYPE html> 
 <html> 
@@ -8,9 +32,11 @@
 	<title>Cash Register Simulator</title> 
 	<?php require_once('meta.inc');?>
 	<script>
-	$(document).ready(function(){
+	$(document).ready(function(){ 
 	var headerClerkName = $.dough("clerkName");
 	console.log("got cookie " + headerClerkName);
+	$.get(getLoggedIn.php),{id: $.dough("clerkId")}
+		
 	$('#headerClerkName').val($.dough("clerkName"));
 	
 	$('#hiddenClerkName').val(headerClerkName);
@@ -37,24 +63,21 @@
 <body><div data-role=page id="mainPage" data-theme="b"/> 
 <div data-role="header" class="header"><h1>Gray and White Cash Register</h1></div>
 <div data-role="content">
-<h3>Logged in as <script>$.dough("clerkName")</script> </h3>
+<h3> Looged in as <? echo $savedAs ?></h3>
 
 <form name="transaction" action="">
-	<input type="hidden" name="hiddenClerkName" value="" id="hiddenClerkName">
+	<input type="hidden" name="hiddenClerkName" value="" id="<? echo $savedAs ?>">
 	<input type="hidden" name="clerkId" value="<? echo $clerkId ?>">
 	  <label for="quantity">Number of items</label>
   <input type="number" name="quantity" id="quantity" value=1>
     <label for="plu">Price Lookup</label>
     <select name="plu" id="select">
-      <option value="food">Food</option>
-      <option value="donated">Donated</option>
-      <option value="merchandise">Merchandise</option>
+      <? echo $selectPhrase ?>
 	
     </select>
     <label for="dept">Department</label>
 	<select name="dept" id="select">
-      <option value="notax">Non Taxable</option>
-      <option value="tax">Taxable</option>
+      <? echo $selectPhrase2 ?>
       
 	
     </select>
