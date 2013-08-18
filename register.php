@@ -8,7 +8,7 @@ if(mysql_error() != ""){
 	echo "Trouble with mysql request " . mysql_error() . "<br />" . $sql;
 	quit;
 	}
-	$selectPhrase ='';
+	$selectPhrase ="<option value=\"0\" > Not selected </option> \n";
 	while($row=mysql_fetch_array($result)){
 	$selectPhrase .= "<option value=\"" . $row['id'] . "\">" . $row['name'] . "</option> \n";
 	}
@@ -19,7 +19,7 @@ if(mysql_error() != ""){
 	echo "Trouble with mysql request " . mysql_error() . "<br />" . $sql2;
 	quit;
 	}
-	$selectPhrase2 ='';
+	$selectPhrase2 ="<option value=\"0\" > Not selected </option> \n";
 	while($row=mysql_fetch_array($result)){
 	$selectPhrase2 .= "<option value=\"" . $row['id'] . "\">" . $row['name'] . "</option> \n";
 	}	
