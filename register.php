@@ -33,15 +33,29 @@ if(mysql_error() != ""){
 	<?php require_once('meta.inc');?>
 	<script>
 	$(document).ready(function(){ 
-	var headerClerkName = $.dough("clerkName");
-	console.log("got cookie " + headerClerkName);
-	$.get(getLoggedIn.php),{id: $.dough("clerkId")}
+	
+	$('#selectPLU').click(function(){
+	console.log("PLU selected");
+	var pluid = $('#selectPLU').val();
+	var pluname ="anything";
+	if(pluid > 0){
 		
-	$('#headerClerkName').val($.dough("clerkName"));
+		console.log("plu id is " + pluid);
+		$.getJSON('getPluData.php'),{
+		pluid: pluid,
+		pluname: pluname
+		},function(data){
+		console.log("at data");
+		console.log("here is the data " + data);
+		console.log("description is " + data.name);
+		$('#itemDescription').val(data.name);
+		$('#price').val(data.price);
+		}
+	}else{console.log("skipped json because id not gt 0");
+	}	
+	})
 	
-	$('#hiddenClerkName').val(headerClerkName);
-	
-	
+
 	$('#enter').click(function(){
 	console.log("enter clicked");
 	var quantity = $('#quantity').val();
@@ -70,22 +84,22 @@ if(mysql_error() != ""){
 	<input type="hidden" name="clerkId" value="<? echo $clerkId ?>">
 	  <label for="quantity">Number of items</label>
   <input type="number" name="quantity" id="quantity" value=1>
-    <label for="plu">Price Lookup</label>
-    <select name="plu" id="select">
+    <label for="selectPLU">Price Lookup</label>
+    <select name="selctPLU" id="selectPLU">
       <? echo $selectPhrase ?>
 	
     </select>
-    <label for="dept">Department</label>
-	<select name="dept" id="select">
+    <label for="selctDept">Department</label>
+	<select name="selctDept" id="selectDept">
       <? echo $selectPhrase2 ?>
       
 	
     </select>
 	<label for="itemDescription">Item description</label>
-	<input type="text" id="itemDescription">
+	<input type="text" id="itemDescription" name="itemDescription" value="">
 	
     <label for="price">Price per unit</label>
-  <input type="number" name="price" id="price">
+  <input type="number" name="price" id="price" value="">
  
   
       <label for="enter">Enter Item</label>
