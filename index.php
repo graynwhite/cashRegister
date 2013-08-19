@@ -22,7 +22,7 @@ require_once("config.inc");
 	//console.log("login clicked ");
 	var name = $('#clerkName').val();
 	var pswd = $('#password').val();
-	$.getJSON('validateLogin.php'),{
+	$.getJSON('validateLogin.php',{
 	name: name,
 	pswd: pswd
 	}, function(data) {

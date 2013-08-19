@@ -50,10 +50,10 @@ if(mysql_error() != ""){
 		console.log("description is " + data.name);
 		$('#itemDescription').val(data.name);
 		$('#price').val(data.price);
-		}
+		} <!-- end of data function -->
 	}else{console.log("skipped json because id not gt 0");
-	}	
-	})
+	} <!-- End of if statement --.	
+	}); <!-- end of selectPLU function -->
 	
 
 	$('#enter').click(function(){
