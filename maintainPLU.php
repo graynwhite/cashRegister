@@ -15,10 +15,11 @@
 	   
 	<script type="text/javascript">
     $(document).ready(function () {
+	$('#PluTableContainer').jtable('load');
         $('#PLUTableContainer').jtable({
             title: 'Table of Prices',
             actions: {
-                listAction: 'PLUList.php',
+                listAction: './PLUList.php',
                 createAction: '/CreatePlu',
                 updateAction: '/UpdatePlu',
                 deleteAction: '/DeletePlu'

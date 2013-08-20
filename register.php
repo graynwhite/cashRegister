@@ -75,29 +75,25 @@ if(mysql_error() != ""){
 				$('#itemDescription').val(data.name);
 				$('#price').val(data.price);
 				$('#deptid').val(data.dptid);
-				
+				 var quantity = $('#quantity').val();
+				var price = data.price;
+	 			itemamount= quantity * price;
+				itemtaxamount = 0;
+				if(data.dptid == 1){
+					itemtaxamount = itemamount * .06;
+					}
+	 			itemgrossamount = itemamount + itemtaxamount;
+				$("#itemamount").val(" this item amount is " + itemamount.toFixed(2) + " plus tax of " + itemtaxamount.toFixed(2) + " total " + itemgrossamount.toFixed(2));
+
 				} <!-- end of data function -->
 		 )<!-- end of getjson
-		 
+		
 		}else{console.log("skipped json because id not gt 0");
 	} <!-- End of if statement --.	
 	
 	});<!-- End of selectPLU -->
 
-	$('#enter').click(function(){
-	console.log("enter clicked");
-	var quantity = $('#quantity').val();
-	var price = $('#price').val();
-	 itemamount= quantity * price;
-	itemtaxamount = 0;
-	if($('#deptid').val() == 1){
-	itemtaxamount = itemamount * .06;
-	}
-	 itemgrossamount = itemamount + itemtaxamount;
-	$("#itemamount").val(" this item amount is " + itemamount.toFixed(2) + " plus tax of " + itemtaxamount.toFixed(2) + " total " + itemgrossamount.toFixed(2));
 	
-	
-	});
 	
 	$('#selectDept').click(function(){
 	var dptsel = $('#selectDept').val();
@@ -164,8 +160,7 @@ if(mysql_error() != ""){
   <input type="text" name="deptid" id="deptid" value="">
  
   
-      <label for="enter">Enter Item</label>
-    <input type="button" name="Enter " value="Enter" id="enter">
+     
 	
 	<label for="itemamount">Amount for this transaction</label>
   <input type="text" name="itemamount" id="itemamount" value="">
