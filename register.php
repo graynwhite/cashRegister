@@ -33,7 +33,7 @@ if(mysql_error() != ""){
 	<?php require_once('meta.inc');?>
 	<script>
 	var saleamount= 0.0;
-	var saletaxAmount = 0.0;
+	var saletaxamount = 0.0;
 	var salegrossamount= 0.0;
 	var itemamount=0.0;
 	var itemtaxamount=0.0;
@@ -107,6 +107,9 @@ if(mysql_error() != ""){
 	});
 	
 	$('#postitem').click(function(){
+	saleamount += itemamount;
+	saletaxamount += itemtaxamount;
+	salegrossamount += itemgrossamount;
 	$.get('postitem.php',{
 	type: '001',
 	clerkId: $.dough("clerkId"),
@@ -130,6 +133,16 @@ if(mysql_error() != ""){
 	
 	});
 	
+	$('#subtotal').click(function(){
+	$('#salesubamount').val(" This sale  amount " + saleamount.toFixed(2) + " tax " + saletaxamount.toFixed(2) + "  Total " + salegrossamount.toFixed(2)); 
+	});
+	
+	$('#saleTotal').click(function(){
+	var change = $('#cashReceived').val() - salegrossamount;
+	$('#change').val(" this is the change amount $" + change.toFixed(2)); 
+	});
+	
+	 
 	}); 
 	</script>
 </head> 
@@ -173,13 +186,14 @@ if(mysql_error() != ""){
     <input type="button" name="postsale" value="Post this item" id="postitem">
 	<div id="resultItem"></div>
     <input type="button" name="subtotal" value="Sub Total this sale" id="subtotal">
-	
+	<label for="salesubamount">Sub Total for this sale</label>
+  <input type="text" name="salesubamount" id="salesubamount" value="" >
     <input type="button" name="void" value="Void this sale" id="voidsale">
     
     
     <label for="cashReceived">Cash Received</label>
     <input type="number" name="cashReceived" id="cashReceived">
-    <input type="button" name="saletotal" value="Total for this sale" id="saleTotal">
+    <input type="button" name="saletotal" value="Post this sale" id="saleTotal">
   
     <label for="change">Change</label>
     <input type="text" name="change" id="change">
