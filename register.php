@@ -38,11 +38,17 @@ if(mysql_error() != ""){
 	var itemamount=0.0;
 	var itemtaxamount=0.0;
 	var itemgrossamount=0.0;
+	var shiftamount=0.0;
+	var shifttaxamount=0.0;
+	var shiftgrossAmount=0.0;
 	
-	function clearAmounts(){
-	 saleamount= 0.0;
-	 saletaxAmount = 0.0;
-	 salegrossamount= 0.0;
+	function clearitem(){
+	 $('#itemDescription').val("");
+	 $('#price').val("");
+	 $('#deptid').val("");
+	 $('#quantity').val(1);
+	 $('#itemamount').val("");
+	 
 	 itemamount=0.0;
 	 itemtaxamount=0.0;
 	 itemgrossamount=0.0;
@@ -55,6 +61,7 @@ if(mysql_error() != ""){
 	console.log("PLU selected");
 	var pluid = $('#selectPLU').val();
 	var pluname ="anything";
+	$('#resultItem').html("");
 	if(pluid > 0){
 		
 		console.log("plu id is " + pluid);
@@ -112,6 +119,7 @@ if(mysql_error() != ""){
 	amount:	itemgrossamount.toFixed(2)
 	}, function(data){
 	$('#resultItem').html(data);
+	clearitem();
 	console.log("ready to play the sound");
 	var aSound = document.createElement('audio');
      aSound.setAttribute('src', 'cash-register-05-wav');
