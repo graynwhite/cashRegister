@@ -32,6 +32,23 @@ if(mysql_error() != ""){
 	<title>Cash Register Simulator</title> 
 	<?php require_once('meta.inc');?>
 	<script>
+	var saleamount= 0.0;
+	var saletaxAmount = 0.0;
+	var salegrossamount= 0.0;
+	var itemamount=0.0;
+	var itemtaxamount=0.0;
+	var itemgrossamount=0.0;
+	
+	function clearAmounts(){
+	var saleamount= 0.0;
+	var saletaxAmount = 0.0;
+	var salegrossamount= 0.0;
+	var itemamount=0.0;
+	var itemtaxamount=0.0;
+	var itemgrossamount=0.0;
+	}
+	
+	
 	$(document).ready(function(){ 
 	
 	$('#selectPLU').click(function(){
@@ -41,35 +58,69 @@ if(mysql_error() != ""){
 	if(pluid > 0){
 		
 		console.log("plu id is " + pluid);
-		$.getJSON('getPluData.php'),{
-		pluid: pluid,
-		pluname: pluname
-		},function(data){
-		console.log("at data");
-		console.log("here is the data " + data);
-		console.log("description is " + data.name);
-		$('#itemDescription').val(data.name);
-		$('#price').val(data.price);
-		} <!-- end of data function -->
-	}else{console.log("skipped json because id not gt 0");
+		$.getJSON('getPluData.php',{
+			pluid: pluid,
+			pluname: pluname
+			},function(data){
+				/*console.log("at data");
+				console.log("here is the data " + data);
+				console.log("description is " + data.name);*/
+				$('#itemDescription').val(data.name);
+				$('#price').val(data.price);
+				$('#deptid').val(data.dptid);
+				
+				} <!-- end of data function -->
+		 )<!-- end of getjson
+		 
+		}else{console.log("skipped json because id not gt 0");
 	} <!-- End of if statement --.	
-	}); <!-- end of selectPLU function -->
 	
+	});<!-- End of selectPLU -->
 
 	$('#enter').click(function(){
 	console.log("enter clicked");
 	var quantity = $('#quantity').val();
 	var price = $('#price').val();
-	var tranamount= quantity * price;
-	console.log("price is " + price);
-	console.log("Quantity is " + quantity);
-	console.log("transaction amount = " + tranamount);
+	 itemamount= quantity * price;
+	itemtaxamount = 0;
+	if($('#deptid').val() == 1){
+	itemtaxamount = itemamount * .06;
+	}
+	 itemgrossamount = itemamount + itemtaxamount;
+	$("#itemamount").val(" this item amount is " + itemamount.toFixed(2) + " plus tax of " + itemtaxamount.toFixed(2) + " total " + itemgrossamount.toFixed(2));
+	
 	
 	});
 	
+	$('#selectDept').click(function(){
+	var dptsel = $('#selectDept').val();
+		if(dptsel > 0){
+		$('#deptid').val(dptsel);
+		} 
+	});
 	
+	$('#postitem').click(function(){
+	$.get('postitem.php',{
+	type: '001',
+	clerkId: $.dough("clerkId"),
+	deptId:	 $('#deptid').val(),
+	pluId:	 $('#selectPLU').val(),
+	descr: $('#itemDescription').val(),
+	quantity: $('#quantity').val(),
+	price:	$('#price').val(),
+	tax:	itemtaxamount.toFixed(2),
+	amount:	itemgrossamount.toFixed(2)
+	}, function(data){
+	$('#resultItem').html(data);
+	console.log("ready to play the sound");
+	var aSound = document.createElement('audio');
+     aSound.setAttribute('src', 'cash-register-05-wav');
+     aSound.play();
+	 console.log("sound should have played");
+	 $('#resutItem').html(" ");
+	})
 	
-	
+	});
 	
 	}); 
 	</script>
@@ -77,7 +128,7 @@ if(mysql_error() != ""){
 <body><div data-role=page id="mainPage" data-theme="b"/> 
 <div data-role="header" class="header"><h1>Gray and White Cash Register</h1></div>
 <div data-role="content">
-<h3> Looged in as <? echo $savedAs ?></h3>
+<h3> Logged in as <? echo $savedAs ?></h3>
 
 <form name="transaction" action="">
 	<input type="hidden" name="hiddenClerkName" value="" id="<? echo $savedAs ?>">
@@ -100,18 +151,27 @@ if(mysql_error() != ""){
 	
     <label for="price">Price per unit</label>
   <input type="number" name="price" id="price" value="">
+  
+  <label for="deptid">Department Id Number (Use PLU or Department Button)</label>
+  <input type="text" name="deptid" id="deptid" value="">
  
   
       <label for="enter">Enter Item</label>
     <input type="button" name="Enter " value="Enter" id="enter">
-   
-    <input type="button" name="subtotal" value="Sub Total" id="subtotal">
+	
+	<label for="itemamount">Amount for this transaction</label>
+  <input type="text" name="itemamount" id="itemamount" value="">
+   <input type="button" name="void" value="Void this amount" id="voiditem">
+    <input type="button" name="postsale" value="Post this item" id="postitem">
+	<div id="resultItem"></div>
+    <input type="button" name="subtotal" value="Sub Total this sale" id="subtotal">
+	
+    <input type="button" name="void" value="Void this sale" id="voidsale">
     
     
-    <input type="button" name="void" value="Void" id="void">
     <label for="cashReceived">Cash Received</label>
     <input type="number" name="cashReceived" id="cashReceived">
-    <input type="button" name="total" value="Total">
+    <input type="button" name="saletotal" value="Total for this sale" id="saleTotal">
   
     <label for="change">Change</label>
     <input type="text" name="change" id="change">

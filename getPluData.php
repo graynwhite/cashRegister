@@ -1,4 +1,3 @@
-<title>Get PLU data</title>
 <?php
 $returnHtml = "";
 require_once("connect.php");
