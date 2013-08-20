@@ -40,12 +40,12 @@ if(mysql_error() != ""){
 	var itemgrossamount=0.0;
 	
 	function clearAmounts(){
-	var saleamount= 0.0;
-	var saletaxAmount = 0.0;
-	var salegrossamount= 0.0;
-	var itemamount=0.0;
-	var itemtaxamount=0.0;
-	var itemgrossamount=0.0;
+	 saleamount= 0.0;
+	 saletaxAmount = 0.0;
+	 salegrossamount= 0.0;
+	 itemamount=0.0;
+	 itemtaxamount=0.0;
+	 itemgrossamount=0.0;
 	}
 	
 	
