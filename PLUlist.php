@@ -1,7 +1,7 @@
 <?php
 require_once("connect.php");
 //Get records from database
-$result = mysql_query("SELECT * FROM PLU;");
+$result = mysql_query("SELECT * FROM PLU order by name;");
  
 //Add all records to an array
 $rows = array();

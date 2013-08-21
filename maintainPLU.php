@@ -15,14 +15,14 @@
 	   
 	<script type="text/javascript">
     $(document).ready(function () {
-	$('#PluTableContainer').jtable('load');
-        $('#PLUTableContainer').jtable({
+	
+        $('#PluTableContainer').jtable({
             title: 'Table of Prices',
             actions: {
-                listAction: './PLUList.php',
-                createAction: '/CreatePlu',
-                updateAction: '/UpdatePlu',
-                deleteAction: '/DeletePlu'
+                listAction: 'PLUlist.php',
+                createAction: 'PLUcreate.php',
+                updateAction: 'PLUupdate.php',
+                deleteAction: 'PLUdelete.php'
             },
             fields: {
                 id: {
@@ -49,7 +49,7 @@
                 }
             }
         });
-		$('#PluTableContainer').jtable('load');
+	$('#PluTableContainer').jtable('load');	
     });
 </script>
 <style>
@@ -60,7 +60,7 @@
 	</style>	
 </head> 
 <body>
-<div id="PLUTableContainer"></div>
+<div id="PluTableContainer"></div>
 </body>
 </html>
 
