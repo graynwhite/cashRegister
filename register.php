@@ -123,11 +123,7 @@ if(mysql_error() != ""){
 	}, function(data){
 	$('#resultItem').html(data);
 	clearitem();
-	console.log("ready to play the sound");
-	var aSound = document.createElement('audio');
-     aSound.setAttribute('src', 'cash-register-05-wav');
-     aSound.play();
-	 console.log("sound should have played");
+	
 	 $('#resutItem').html(" ");
 	})
 	
