@@ -93,7 +93,7 @@ if(mysql_error() != ""){
 	if($('#deptid').val() == 1){
 	itemtaxamount = itemamount * .06;
 	}
-	 itemgrossamount = itemamount + itemtaxamount;
+	 itemgrossamount = itemamount * 1.06;
 	$("#itemamount").val(" this item amount is " + itemamount.toFixed(2) + " plus tax of " + itemtaxamount.toFixed(2) + " total " + itemgrossamount.toFixed(2));
 	
 	
