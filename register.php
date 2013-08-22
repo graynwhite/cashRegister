@@ -48,6 +48,7 @@ if(mysql_error() != ""){
 	 $('#deptid').val("");
 	 $('#quantity').val(1);
 	 $('#itemamount').val("");
+	 $('#departmentLookup').hide();
 	 
 	 itemamount=0.0;
 	 itemtaxamount=0.0;
@@ -131,6 +132,7 @@ if(mysql_error() != ""){
 	$('#resultItem').html(data);
 	clearitem();
 	
+	
 	 $('#resutItem').html(" ");
 	})
 	
@@ -149,6 +151,12 @@ if(mysql_error() != ""){
 	$('#salesubamount').val(''); 
 	});
 	
+	$('#itemDescription').blur(function(){
+	console.log("description changed");
+	if($('#deptid').val() == ""){
+		$('#departmentLookup').show();
+		}
+	});
 	 
 	}); 
 	</script>
@@ -167,25 +175,28 @@ if(mysql_error() != ""){
       <? echo $selectPhrase ?>
 	
     </select>
-	<div id="departmentLookup">
-    <label for="selctDept">Department</label>
-	<select name="selctDept" id="selectDept">
-      <? echo $selectPhrase2 ?>
-         </select>
-		 </div>
-		 
+			 
 	 <label for="quantity">Number of items</label>
   <input type="number" name="quantity" id="quantity" value=1>
   
 	<label for="itemDescription">Item description</label>
 	<input type="text" id="itemDescription" name="itemDescription" value="">
 	
-    <label for="price">Price per unit</label>
-  <input type="number" name="price" id="price" value="">
+   
   
+  <div id="departmentLookup">
+    <label for="selctDept">Department</label>
+	<select name="selctDept" id="selectDept">
+      <? echo $selectPhrase2 ?>
+         </select>
+		 </div>
+
   <label for="deptid">Department Id Number (Use PLU or Department Button)</label>
   <input type="text" name="deptid" id="deptid" value="">
  
+   <label for="price">Price per unit</label>
+  <input type="number" name="price" id="price" value="">
+  
   
       <label for="enter">Enter Item</label>
     <input type="button" name="Enter " value="Calculate this item amount" id="enter">
