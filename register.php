@@ -8,7 +8,7 @@ if(mysql_error() != ""){
 	echo "Trouble with mysql request " . mysql_error() . "<br />" . $sql;
 	quit;
 	}
-	$selectPhrase ="<option value=\"0\" > Not selected </option> \n";
+	$selectPhrase ="<option value=\"0\" > Select an item </option> \n";
 	while($row=mysql_fetch_array($result)){
 	$selectPhrase .= "<option value=\"" . $row['id'] . "\">" . $row['name'] . "</option> \n";
 	}
@@ -56,6 +56,10 @@ if(mysql_error() != ""){
 	
 	
 	$(document).ready(function(){ 
+	$('#departmentLookup').hide();
+	$('#voidItemArea').hide();
+	$('#voidSaleArea').hide();
+	
 	
 	$('#selectPLU').click(function(){
 	console.log("PLU selected");
@@ -141,7 +145,8 @@ if(mysql_error() != ""){
 	$('#change').val(" this is the change amount $" + change.toFixed(2));
 	saleamount=0;
 	saletaxamount=0;
-	salegrossamount=0; 
+	salegrossamount=0;
+	$('#salesubamount').val(''); 
 	});
 	
 	 
@@ -156,19 +161,22 @@ if(mysql_error() != ""){
 <form name="transaction" action="">
 	<input type="hidden" name="hiddenClerkName" value="" id="<? echo $savedAs ?>">
 	<input type="hidden" name="clerkId" value="<? echo $clerkId ?>">
-	  <label for="quantity">Number of items</label>
-  <input type="number" name="quantity" id="quantity" value=1>
+	 
     <label for="selectPLU">Price Lookup</label>
     <select name="selctPLU" id="selectPLU">
       <? echo $selectPhrase ?>
 	
     </select>
+	<div id="departmentLookup">
     <label for="selctDept">Department</label>
 	<select name="selctDept" id="selectDept">
       <? echo $selectPhrase2 ?>
-      
-	
-    </select>
+         </select>
+		 </div>
+		 
+	 <label for="quantity">Number of items</label>
+  <input type="number" name="quantity" id="quantity" value=1>
+  
 	<label for="itemDescription">Item description</label>
 	<input type="text" id="itemDescription" name="itemDescription" value="">
 	
@@ -184,14 +192,23 @@ if(mysql_error() != ""){
 	
 	<label for="itemamount">Amount for this transaction</label>
   <input type="text" name="itemamount" id="itemamount" value="">
+  <div id="voidItemArea">
    <input type="button" name="void" value="Void this amount" id="voiditem">
-    <input type="button" name="postsale" value="Post this item" id="postitem">
+   </div>
+   <input type="button" name="postsale" value="Post this item" id="postitem">
+	
+	
 	<div id="resultItem"></div>
+	
+	<div id="saleSubTotalArea" >
     <input type="button" name="subtotal" value="Sub Total this sale" id="subtotal">
 	<label for="salesubamount">Sub Total for this sale</label>
   <input type="text" name="salesubamount" id="salesubamount" value="" >
+  </div>
+  
+  	<div id="voidSaleArea">
     <input type="button" name="void" value="Void this sale" id="voidsale">
-    
+    </div>
     
     <label for="cashReceived">Cash Received</label>
     <input type="number" name="cashReceived" id="cashReceived">
