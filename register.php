@@ -138,7 +138,10 @@ if(mysql_error() != ""){
 	
 	$('#saleTotal').click(function(){
 	var change = $('#cashReceived').val() - salegrossamount;
-	$('#change').val(" this is the change amount $" + change.toFixed(2)); 
+	$('#change').val(" this is the change amount $" + change.toFixed(2));
+	saleamount=0;
+	saletaxamount=0;
+	salegrossamount=0; 
 	});
 	
 	 
