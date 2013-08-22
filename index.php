@@ -6,9 +6,13 @@ require_once("config.inc");
 <html> 
 	<head>
 
-	<title>Cash Register Simulator</title> 
+	<title>Virtual Cash Register</title> 
 	<?php require_once('meta.inc');?>
+	<script src="mktime.js"</script>
+	
 	<script>
+	
+	
 	$(document).ready(function(){
 	$('#actionArea').show();
 	$('#tryAgainArea').hide();
@@ -19,9 +23,10 @@ require_once("config.inc");
 	$.dough("clerkRole","remove",{ path: "current" });
 	
 	$('#btnLogin').click(function(){
-	//console.log("login clicked ");
+	
 	var name = $('#clerkName').val();
 	var pswd = $('#password').val();
+	
 	$.getJSON('validateLogin.php',{
 	name: name,
 	pswd: pswd
@@ -29,16 +34,17 @@ require_once("config.inc");
 	$('#returnedClerkName').val(data.clerkName);
 	$('#returnedClerkId').val(data.id);
 	$('#returnedClerkRole').val(data.role);
-	console.log("clerk name= " + data.clerkName);
-	console.log("clerk id is " + data.id);
-	console.log("clerk role is " + data.role);
+	var timelogin = event.timestamp;
 	var clerkName= data.clerkName;
 	var clerkId = data.id;
 	var clerkRole = data.role;
+	var timelogin=mktime();
+	
 	
 	$.dough("clerkName",clerkName,{ expires: 1 , path: "current" });
 	$.dough("clerkId",clerkId,{ expires: 1 , path: "current" });
 	$.dough("clerkRole",clerkRole,{ expires: 1 , path: "current" });
+	$.dough("loginTime",timelogin, { expires: 1 , path: "current" });
 	
 	
 		$('#actionArea').hide();
@@ -67,15 +73,13 @@ require_once("config.inc");
 	</script>
 </head> 
 <body><div data-role=page id="mainPage" data-theme="b"/> 
-<div data-role="header" class="header"><h1>Gray and White Cash Register</h1></div>
+<div data-role="header" class="header"><h1>Gray and White Virtual Cash Register</h1></div>
 <div data-role="content">
 <h3><? echo $ORGNAME ?></h3>
 
 <div id="actionArea">
 <form name="login" action="">
-	<input type="hidden" id="returnedClerkName" value="">
-	<input type="hidden" if="returnedClerkId" value="">
-	<input type="hidden" id="returnedClerkRole" vaule="">
+	
   <label for="clerkName">Name</label>
   <input type="text" name="clerkName" id="clerkName" value="" placeholder='Your cash register login name here'>
     <label for="password">Cash Register login password</label>
@@ -103,7 +107,7 @@ require_once("config.inc");
 	
 </div>
 </div><!--End of content-->
-<div data-role=footer><h1>Gray and White Cash Register</h1></div>
+<div data-role=footer><h1>Gray and White Virtual Cash Register</h1></div>
 </div><!-- End of Page -->
 <!-- ========================== -->
 </body>

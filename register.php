@@ -19,7 +19,7 @@ if(mysql_error() != ""){
 	echo "Trouble with mysql request " . mysql_error() . "<br />" . $sql2;
 	quit;
 	}
-	$selectPhrase2 ="<option value=\"0\" > Not selected </option> \n";
+	$selectPhrase2 ="<option value=\"0\" > Select Department </option> \n";
 	while($row=mysql_fetch_array($result)){
 	$selectPhrase2 .= "<option value=\"" . $row['id'] . "\">" . $row['name'] . "</option> \n";
 	}	
@@ -29,8 +29,9 @@ if(mysql_error() != ""){
 <html> 
 	<head>
 
-	<title>Cash Register Simulator</title> 
+	<title>Virtual Cash Register</title> 
 	<?php require_once('meta.inc');?>
+	<script src="mktime.js"></script>
 	<script>
 	var saleamount= 0.0;
 	var saletaxamount = 0.0;
@@ -158,11 +159,16 @@ if(mysql_error() != ""){
 		}
 	});
 	 
+	
+	 
+	 
+	 
 	}); 
 	</script>
 </head> 
 <body><div data-role=page id="mainPage" data-theme="b"/> 
-<div data-role="header" class="header"><h1>Gray and White Cash Register</h1></div>
+<div data-role="header" class="header"><h1>Gray and White Virtual Cash Register</h1>
+<a href="logout.php"><input type="button" id="btnLogout" value="Logout"></a></div>
 <div data-role="content">
 <h3> Logged in as <? echo $savedAs ?></h3>
 
@@ -230,7 +236,7 @@ if(mysql_error() != ""){
   
 </form>
 </div><!--End of content-->
-<div data-role=footer><h1>Gray and White Cash Register</h1></div>
+<div data-role=footer><h1>Gray and White Virtual Cash Register</h1></div>
 </div><!-- End of Page -->
 <!-- ========================== -->
 <div data-role=page id="subtotal" data-theme="b"/> 
