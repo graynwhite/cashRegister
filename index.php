@@ -94,7 +94,7 @@ require_once("config.inc");
 <div id="managerArea">
 <h2>You are logged in as a Manager</h2>
 	<a href="#"><input type="button" id="btnReport" name="btnReport" value="Reports"></a>
-	<a href="#"><input type="button" id="btnTrnsMaint" name="btnTrnsMaint" value="Transaction Maintenance"></a>
+	<a href="maintainTrans.php" target="_blank"><input type="button" id="btnTrnsMaint" name="btnTrnsMaint" value="Transaction Maintenance"></a>
 	<a href="maintainClerk.php" target="_blank"><input type="button" id="btnClerkMaint" name="btnClerkMaint" value="Clerk Maintenance"></a>
 	<a href="maintainDept.php" target="_blank"><input type="button" id="btnDeptMaint" name="btnDeptMaint" value="Department Maintenance"></a>
 	<a href="maintainPLU.php" target="_blank"><input type="button" id="btnPLUMaint" name="btnPLUMaint" value="PLU Maintenance"></a>
