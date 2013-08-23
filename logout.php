@@ -15,7 +15,7 @@
 	});
 	$('#sendMailButton').click(function(){
 	$.post("sendMail.php",{
-	email: "cauleyfj64@gmail.com",
+	email: "allie807@comcast.net",
 	subject: "Shift Report",
 	message: $('#logoutReportArea').html()
 	},function(data){
