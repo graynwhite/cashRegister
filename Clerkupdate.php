@@ -3,16 +3,13 @@
 require_once('connect.php');
 $id=$_POST['id'];
 $name=$_POST['name'];
-$taxid1=$_GET['taxid1'];
-$taxid2=$_GET['taxid2'];
-$taxid3=$_GET['taxid3'];
-$taxid4=$_GET['taxid4'];
-
+$password=$_POST['password'];
+$role=$_POST['role'];
+$phone=$_POST['phone'];
 $sql="INSERT INTO clerk set name= \"$name\",
-taxid1 = \"$taxid1\",
-taxid2 = \"$taxid2\",
-taxid3 = \"$taxid3\",
-taxid4 = \"$taxid\"
+password = \"$password\",
+role = \"$role\",
+phone = \"$phone\"
  where id = \"$id\" ";
 $result1=mysql_query($sql);
 
