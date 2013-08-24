@@ -1,29 +1,39 @@
 System overview
 ==================
 The Virtual Cash Register System was written to provide a simple alternative to a paper driven procedure. Searching the internet for inexpensive cash registers that could be easily moved, netted no results. Any software found was tied to a particular hardware device or some other accounting software. Therefore, the following criteria was used to develop the Virtual Cash Register.
+
 - Simplicity
 - Minimum Security
 - Portability
+
 The system was developed with the idea that other organizations might want to use some components of the system. We will be submitting this system to Github and PHP,both open source enablers,so that others can use and improve the system.
 System features
 ------------------
 - Price look-up for items
 - Automatic Sales Tax computation
 - Allows manual entry of items not on the look-up list
+- Provides product movement visibility.
+- Provides purchased product accountability
+
 System requirements
 ------------------
 - Devices that can connect to the internet.
-- Devices that have javascript enabled
+- Devices that have javascript enabled (desktops, laptops, tablets and cell phones)
 - Trained Virtual Cash Register users or a person to transcribe the paper records.
 System Goals
-------------------
-- Provide product movement visibility.
-- Provide purchased product accountability
+- PHP 
+- MySql
+- javascript enabled
+- nathansearles/Dough
+- jTable.org
+
+
 Things to do
 ------------------
 - Automated void and return procedure
 - Spreadsheet output
  - Implement price overide feature
+ 
 System Components
 ================== 
 Clerk file
@@ -58,12 +68,15 @@ Index screen
 ------------------
 ![Index screen](http://www.graynwhite.com/cashRegister/indexLogin.png "Index screen")
 - controls log in validation
-![](http://www.graynwhite.com/cashRegister/indexManager.png "Manager screen")
 - Provides Managers with reporting and control features.
+![](http://www.graynwhite.com/cashRegister/indexManager.png "Manager screen")
+
+
 Register screen
 ------------------
 ![Register Screen](http://www.graynwhite.com/cashRegister/register.png "Register")
 Provides register personnel with transaction input capabilities and a log out button to end their shift.
+
 Log out screen
 ------------------
 Presents a mini-report of the actions taken during their shift and a button to send the information to their manager.

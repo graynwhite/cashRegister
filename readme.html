@@ -1,0 +1,96 @@
+<h1>System overview</h1>
+
+<p>The Virtual Cash Register System was written to provide a simple alternative to a paper driven procedure. Searching the internet for inexpensive cash registers that could be easily moved, netted no results. Any software found was tied to a particular hardware device or some other accounting software. Therefore, the following criteria was used to develop the Virtual Cash Register.</p>
+
+<ul>
+<li>Simplicity</li>
+<li>Minimum Security</li>
+<li>Portability</li>
+</ul>
+
+<p>The system was developed with the idea that other organizations might want to use some components of the system. We will be submitting this system to Github and PHP,both open source enablers,so that others can use and improve the system.</p>
+
+<h2>System features</h2>
+
+<ul>
+<li>Price look-up for items</li>
+<li>Automatic Sales Tax computation</li>
+<li>Allows manual entry of items not on the look-up list</li>
+<li>Provides product movement visibility.</li>
+<li>Provides purchased product accountability</li>
+</ul>
+
+<h2>System requirements</h2>
+
+<ul>
+<li>Devices that can connect to the internet.</li>
+<li>Devices that have javascript enabled (desktops, laptops, tablets and cell phones)</li>
+<li>Trained Virtual Cash Register users or a person to transcribe the paper records.
+System Goals</li>
+<li>PHP </li>
+<li>MySql</li>
+<li>javascript enabled</li>
+<li>nathansearles/Dough</li>
+<li>jTable.org</li>
+</ul>
+
+<h2>Things to do</h2>
+
+<ul>
+<li>Automated void and return procedure</li>
+<li>Spreadsheet output
+<ul><li>Implement price overide feature</li></ul></li>
+</ul>
+
+<h1>System Components</h1>
+
+<h2>Clerk file</h2>
+
+<p>Has fields for name, password, phone number and role. Their are presently three roles, clerk, manager and administrator.</p>
+
+<h2>Department File</h2>
+
+<p>Has fields for name and tax calculation data.</p>
+
+<h2>Product Look-up file (PLU)</h2>
+
+<p>Has fields for name, department, unit price and a price override field to allow clerk to modify the unit price. (Currently not implemented)</p>
+
+<h2>Tax file</h2>
+
+<p>Contains tax calculation data for various taxes. Currently only has Michigan Sales tax information.</p>
+
+<h2>Transaction File</h2>
+
+<p>Collects information pertaining to:
+- Date of transaction 
+- Transaction type (currently only sale)
+- Clerk identification number
+- Department identification number
+- Product Look-up identification number(PLU)
+- Quantity
+- Description of item
+- Unit Price
+- Tax
+- Transaction amount</p>
+
+<h2>Configuration File</h2>
+
+<p>Contains information pertaining to the organization.</p>
+
+<h2>Index screen</h2>
+
+<p><img src="http://www.graynwhite.com/cashRegister/indexLogin.png" alt="Index screen" title="Index screen" />
+- controls log in validation
+- Provides Managers with reporting and control features.
+<img src="http://www.graynwhite.com/cashRegister/indexManager.png" alt="" title="Manager screen" /></p>
+
+<h2>Register screen</h2>
+
+<p><img src="http://www.graynwhite.com/cashRegister/register.png" alt="Register Screen" title="Register" />
+Provides register personnel with transaction input capabilities and a log out button to end their shift.</p>
+
+<h2>Log out screen</h2>
+
+<p>Presents a mini-report of the actions taken during their shift and a button to send the information to their manager.</p>
+
