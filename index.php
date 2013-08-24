@@ -2,18 +2,20 @@
 require_once("config.inc");
 
 ?>
+
 <!DOCTYPE html> 
 <html> 
 	<head>
 
 	<title>Virtual Cash Register</title> 
 	<?php require_once('meta.inc');?>
-	<script src="mktime.js"</script>
+	<script src="mktime.js"></script>
 	
 	<script>
 	
 	
 	$(document).ready(function(){
+	console.log("document ready");
 	$('#actionArea').show();
 	$('#tryAgainArea').hide();
 	$('#clerkOkArea').hide();
@@ -34,7 +36,6 @@ require_once("config.inc");
 	$('#returnedClerkName').val(data.clerkName);
 	$('#returnedClerkId').val(data.id);
 	$('#returnedClerkRole').val(data.role);
-	var timelogin = event.timestamp;
 	var clerkName= data.clerkName;
 	var clerkId = data.id;
 	var clerkRole = data.role;
@@ -71,11 +72,12 @@ require_once("config.inc");
 	
 	}); 
 	</script>
+	
 </head> 
 <body><div data-role=page id="mainPage" data-theme="b"/> 
 <div data-role="header" class="header"><h1>Gray and White Virtual Cash Register</h1></div>
 <div data-role="content">
-<h3><? echo ORGNAME ?> </h3>
+<h3><? echo $ORGNAME ?></h3>
 
 <div id="actionArea">
 <form name="login" action="">
@@ -87,14 +89,17 @@ require_once("config.inc");
 	<input type="button" name="btnLogin" id="btnLogin" value="login">
 </form> 
 </div> <!--End of actionArea -->
+
 <div id="tryAgainArea">
 <h2>Your login was not accepted! </h2>
 <a href="http://www.graynwhite.com/cashRegister/" target="_self"><input type="button" value="Try again?"></a>
 </div> 
+
 <div id="clerkOkArea">
 <h2>You are logged In!</h2>
 <a href="http://www.graynwhite.com/cashRegister/register.php"\""><input type="button" value="Continue"></a>
 </div>
+
 <div id="managerArea">
 <h2>You are logged in as a Manager</h2>
 	<a href="#"><input type="button" id="btnReport" name="btnReport" value="Reports"></a>

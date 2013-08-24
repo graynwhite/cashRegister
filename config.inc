@@ -1,10 +1,9 @@
 <?php
-define('ORGNAME','Royal Oak Manor Showcase Boutique');
-define('ORGADDRESS', '606 Williams');
-define('ORGCITY', 'Royal Oak');
-define('ORGSTATE' , 'Michigan');
-define('ORGZIP' , '48067');
-define('ORGTOPPHRASE', 'Thank You for shopping with us');
-define('ORGBOTTOMPHRASE' , 'Come back soon');
-
+$ORGNAME = "Royal Oak Manor Showcase Boutique";
+$ORGADDRESS = "606 Williams";
+$ORGCITY = "Royal Oak";
+$ORGSTATE = "Michigan";
+$ORGZIP = "48067";
+$ORGTOPPHRASE = "Thank You for shopping with us";
+$ORGBOTOMPHRASE = "Come back soon";
 ?>
