@@ -75,7 +75,7 @@ require_once("config.inc");
 <body><div data-role=page id="mainPage" data-theme="b"/> 
 <div data-role="header" class="header"><h1>Gray and White Virtual Cash Register</h1></div>
 <div data-role="content">
-<h3><? echo $ORGNAME ?></h3>
+<h3><? echo ORGNAME ?> </h3>
 
 <div id="actionArea">
 <form name="login" action="">

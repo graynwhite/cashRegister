@@ -1,5 +1,5 @@
 <?php
-define('ORGNAME','Royal Oak Manor Showcase Boutique);
+define('ORGNAME','Royal Oak Manor Showcase Boutique');
 define('ORGADDRESS', '606 Williams');
 define('ORGCITY', 'Royal Oak');
 define('ORGSTATE' , 'Michigan');
