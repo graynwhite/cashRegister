@@ -15,12 +15,11 @@ System features
 - Provides product movement visibility.
 - Provides purchased product accountability
 
-System requirements
+System Requirements
 ------------------
 - Devices that can connect to the internet.
 - Devices that have javascript enabled (desktops, laptops, tablets and cell phones)
 - Trained Virtual Cash Register users or a person to transcribe the paper records.
-System Goals
 - PHP 
 - MySql
 - javascript enabled
@@ -28,17 +27,17 @@ System Goals
 - jTable.org
 
 
-Things to do
+Things To Do
 ------------------
 - Automated void and return procedure
 - Spreadsheet output
- - Implement price overide feature
+- Implement price overide control feature
  
 System Components
 ================== 
 Clerk file
 ------------------
-Has fields for name, password, phone number and role. Their are presently three roles, clerk, manager and administrator.
+Has fields for name, password, phone number and role. There are presently three roles, clerk, manager and administrator.
 Department File
 ------------------
 Has fields for name and tax calculation data.
@@ -61,9 +60,11 @@ Collects information pertaining to:
 - Unit Price
 - Tax
 - Transaction amount
+
 Configuration File
 ------------------
 Contains information pertaining to the organization.
+
 Index screen
 ------------------
 ![Index screen](http://www.graynwhite.com/cashRegister/indexLogin.png "Index screen")
