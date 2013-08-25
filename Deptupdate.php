@@ -28,7 +28,7 @@ $Result = "OK";
  
 //Return result to jTable
 $jTableResult = array();
-$jTableResult['Result'] = $result;
+$jTableResult['Result'] = $Result;
 $jTableResult['Message']= $message;
 print json_encode($jTableResult);
 ?>
