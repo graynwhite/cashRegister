@@ -1,7 +1,7 @@
 <?php
 require_once("connect.php");
 //Get records from database
-$result = mysql_query("SELECT * FROM  transaction order by date;");
+$result = mysql_query("SELECT * FROM  transaction order by date");
  
 //Add all records to an array
 $rows = array();

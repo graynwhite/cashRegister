@@ -2,7 +2,7 @@
 //Update record into database
 require_once('connect.php');
 $id=$_POST['id'];
-$id=$_POST['date'];
+$date=$_POST['date'];
 $type=$_POST['type'];
 $clerkId=$_POST['clerkId'];
 $deptId=$_POST['deptId'];
@@ -11,23 +11,30 @@ $descr=$_POST['descr'];
 $quantity=$_POST['quantity'];
 $price=$_POST['price'];
 $tax=$_POST['tax'];
-$amount=$_POST['post'];
-
-$sql="UPDATE transaction set name= \"$type\",
+$amount=$_POST['amount'];
+$message ="";
+$sql="UPDATE transaction set type= \"$type\",
 clerkId=\"$clerkId\",
 deptId=\"$deptId\",
-pluId=\"$pluId\"],
-description=\"$description\",
+pluId=\"$pluId\",
+descr=\"$descr\",
 quantity=\"$quantity\",
 price=\"$price\",
 tax=\"$tax\",
 amount=\"$amount\"
 where id = \"$id\" ";
-$Result=mysql_query($sql);
+$result=mysql_query($sql);
+if(mysql_error() != ''){
+$Result = "Not Ok";
+$message = "<br />Problem with the query <br />" . $sql . "<br /> " . mysql_error();
+}else{
+$Result = "OK";
+}
 
  
 //Return result to jTable
 $jTableResult = array();
-$jTableResult['Result'] = "OK";
+$jTableResult['Result'] = $Result;
+$jTableResult['Message']= $message;
 print json_encode($jTableResult);
 ?>

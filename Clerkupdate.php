@@ -6,21 +6,25 @@ $name=$_POST['name'];
 $password=$_POST['password'];
 $role=$_POST['role'];
 $phone=$_POST['phone'];
-$sql="INSERT INTO clerk set name= \"$name\",
-password = \"$password\",
-role = \"$role\",
-phone = \"$phone\"
- where id = \"$id\" ";
-$result1=mysql_query($sql);
 
- 
-//Get last inserted record (to return to jTable)
-$result = mysql_query("SELECT * FROM department WHERE id = LAST_INSERT_ID()");
-$row = mysql_fetch_array($result);
+$sql="UPDATE clerk set name= \"$name\",
+password=\"$password\",
+role=\"$role\",
+phone=\"$phone\"
+ where id = \"$id\" ";
+ $result=mysql_query($sql);
+if(mysql_error() != ''){
+$Result = "Not Ok";
+$message = "<br />Problem with the query <br />" . $sql . "<br /> " . mysql_error();
+}else{
+$Result = "OK";
+}
+
+
  
 //Return result to jTable
 $jTableResult = array();
-$jTableResult['Result'] = "OK";
-$jTableResult['Record'] = $row;
+$jTableResult['Result'] = $result;
+$jTableResult['Message']= $message;
 print json_encode($jTableResult);
 ?>
