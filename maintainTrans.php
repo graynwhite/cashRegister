@@ -18,6 +18,7 @@
 	
         $('#TRXTableContainer').jtable({
             title: 'Cash Register Transactions',
+			pageSize: 10, //Set page size (default: 10)
             actions: {
                 listAction: 'TRXlist.php',
                 createAction: 'TRXcreate.php',
