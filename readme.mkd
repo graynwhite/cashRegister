@@ -63,7 +63,24 @@ Collects information pertaining to:
 
 Configuration File
 ------------------
-Contains information pertaining to the organization.
+This file must be created at implementation time and it should contain the following entries:
+
+- define('ORGNAME_DEF','The name of your organization');
+- define('ORGADDRESS_DEF', 'Address');
+- define('ORGCITY_DEF', 'City');
+- define('ORGSTATE_DEF' , 'state');
+- define('ORGZIP_DEF' , 'zip');
+- define('ORG_TOP_PHRASE' , 'A phrase that you would want to be on top of a printed receipt');
+- define('ORG_BOTTOM_PHRASE' , 'A Phrase that you would want to be on the bottom of a printed receipt');
+- define('HOST_SERVER', 'The jost server');
+- define('DATABASE_USERNAME', 'username');
+- define('DATABASE_PASSWORD', 'password');
+- define('DATABASE_NAME' , 'data base name');
+
+
+
+
+
 
 Index screen
 ------------------
