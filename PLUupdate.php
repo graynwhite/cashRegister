@@ -1,5 +1,7 @@
 <?
+
 //Update record into database
+require_once("config.inc");
 require_once('connect.php');
 $id=$_POST['id'];
 $name=$_POST['name'];

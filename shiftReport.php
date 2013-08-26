@@ -1,4 +1,5 @@
 <?php
+require_once("config.inc");
 require_once("connect.php");
 $clerkName=$_COOKIE['clerkName'];
 $clerkId = $_COOKIE['clerkId'];

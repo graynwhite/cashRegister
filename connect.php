@@ -1,6 +1,6 @@
 <?php
 	//connect to the database server
-	$dbcnx = @mysql_connect("localhost","graynwhi_cashRegister", "/PJ7t85e");
+	$dbcnx = @mysql_connect(HOST_SERVER,"graynwhi_cashRegister", "/PJ7t85e");
    
 	if (!$dbcnx) {  
                       echo("<h1>Unable to connect to the database server at this time.</h1></p>");

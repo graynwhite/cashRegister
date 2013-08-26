@@ -1,4 +1,5 @@
 <?php
+require_once("config.inc");
 require_once("connect.php");
 //Get records from database
 $result = mysql_query("SELECT * FROM  transaction order by date");

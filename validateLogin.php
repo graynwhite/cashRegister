@@ -1,5 +1,6 @@
 <?php
 $returnHtml = "";
+require_once("config.inc");
 require_once("connect.php");
 $name = $_GET['name'];
 $pswd = $_GET['pswd'];

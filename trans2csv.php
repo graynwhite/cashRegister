@@ -1,4 +1,5 @@
-<?php
+<?
+require_once("config.inc");
 require_once("connect.php");
 $sql = "SELECT *
     INTO OUTFILE 'C:/Data/City.csv'
