@@ -31,7 +31,7 @@ Things To Do
 ------------------
 - Automated void and return procedure
 - Spreadsheet output
-- Implement price overide control feature
+
  
 System Components
 ================== 
