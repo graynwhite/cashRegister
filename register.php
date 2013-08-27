@@ -82,6 +82,15 @@ if(mysql_error() != ""){
 				$('#itemDescription').val(data.name);
 				$('#price').val(data.price);
 				$('#deptid').val(data.dptid);
+					if(data.overide == 0){
+						console.log("No Price overide");
+						$('#price').prop("readonly",true);
+						$('#price').prop("title","Price is not changeable");
+					}else{
+						console.log("Price changeable");
+						$('#price').prop("readonly",false);
+						$('#price').prop("title","Price can be changed");
+						}
 				
 				} <!-- end of data function -->
 		 )<!-- end of getjson
