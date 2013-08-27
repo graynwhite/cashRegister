@@ -76,6 +76,7 @@ This file must be created at implementation time and it should contain the follo
 - define('DATABASE_USERNAME', 'username');
 - define('DATABASE_PASSWORD', 'password');
 - define('DATABASE_NAME' , 'data base name');
+- define('WEBMASTER_ADDRESS' , 'your webmasters email address');
 
 
 
