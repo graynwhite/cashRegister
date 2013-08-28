@@ -25,6 +25,7 @@ System Requirements
 - javascript enabled
 - nathansearles/Dough
 - jTable.org
+- Bootstrap (getbootstrap.com)
 
 
 Things To Do
