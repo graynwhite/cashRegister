@@ -58,6 +58,9 @@ require_once("config.inc");
 		if(data.role=="clk"){
 			$('#clerkOkArea').show();
 			}
+		if(data.role=="trn"){
+			$('#clerkOkArea').show();
+			}	
 		if(data.role=="  "){
 			$('#tryAgainArea').show();
 			}		
@@ -97,7 +100,7 @@ require_once("config.inc");
 
 <div id="clerkOkArea">
 <h2>You are logged In!</h2>
-<a href="http://www.graynwhite.com/cashRegister/register.php"\""><input type="button" value="Continue"></a>
+<a href="http://www.graynwhite.com/cashRegister/register.php"  data-ajax="false" ><input type="button" value="Continue"></a>
 </div>
 
 <div id="managerArea">

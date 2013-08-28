@@ -9,10 +9,7 @@
 	<script>
 	$(document).ready(function(){
 	
-	$.get("shiftReport.php"
-	,function(data){
-	$('#logoutReportArea').html(data);
-	});
+	
 	$('#sendMailButton').click(function(){
 	$.post("sendMail.php",{
 	email: "allie807@comcast.net",

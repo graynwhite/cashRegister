@@ -132,6 +132,7 @@ if(mysql_error() != ""){
 	$.get('postitem.php',{
 	type: '001',
 	clerkId: $.dough("clerkId"),
+	role: $.dough("clerkRole"),
 	deptId:	 $('#deptid').val(),
 	pluId:	 $('#selectPLU').val(),
 	descr: $('#itemDescription').val(),
@@ -155,7 +156,7 @@ if(mysql_error() != ""){
 	
 	$('#saleTotal').click(function(){
 	var change = $('#cashReceived').val() - salegrossamount;
-	$('#change').val(" this is the change amount $" + change.toFixed(2));
+	$('#change').val(" Change amount $" + change.toFixed(2));
 	saleamount=0;
 	saletaxamount=0;
 	salegrossamount=0;
@@ -178,7 +179,7 @@ if(mysql_error() != ""){
 </head> 
 <body><div data-role=page id="mainPage" data-theme="b"/> 
 <div data-role="header" class="header"><h1>Gray and White Virtual Cash Register</h1>
-<a href="logout.php"><input type="button" id="btnLogout" value="Logout"></a></div>
+<a  href="shiftReport.php"  data-ajax="false" ><input type="button" id="btnLogout" value="Logout"></a></div>
 <div data-role="content">
 <h3> Logged in as <? echo $savedAs ?></h3>
 
