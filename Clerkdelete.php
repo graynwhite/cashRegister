@@ -1,4 +1,5 @@
 <?
+require_once('config.inc');
 require_once('connect.php');
 //Delete from database
 $result = mysql_query("DELETE FROM clerk WHERE id = " . $_POST["id"] . ";");
