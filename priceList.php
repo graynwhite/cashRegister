@@ -14,8 +14,7 @@ quit;
 
 	<title>Virtual Cash Register Price List</title> 
 	<? include_once("meta.inc"); ?>
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	
 	
 </head> 
 <body>
