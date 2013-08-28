@@ -35,7 +35,7 @@ $totalAmount += $row['amount'];
 
 
 $html .= "<tr><td> Total  </td><td> " . number_format($totalTax, 2, '.', ',') . "</td><td>" . number_format($totalAmount, 2, '.', ','). "</td></tr></table>";
-$html.="<h4>Prepared by the Gray and White Virtual Cash Register";
+
 ?>
 <html> 
 	<head>
@@ -51,6 +51,8 @@ $html.="<h4>Prepared by the Gray and White Virtual Cash Register";
 <div data-role="content">
 <h3><?php echo ORGNAME_DEF ?> Shift Report</h3>
 <? echo $html ?>
+<a href="register.php" data-ajax="false"><input type="button" value="Go back to the Virtual Cash Register"</a>
+<a href="logout.php"  data-ajax="false"><input type="button" value="Continue Logout and send this report to the manager"</a>
 </div> <!--End of content-->
 <div data-role=footer><h1>Virtual Cash Register</h1></div>
 </div><!-- End of Page -->

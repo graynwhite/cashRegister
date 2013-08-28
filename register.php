@@ -179,7 +179,8 @@ if(mysql_error() != ""){
 </head> 
 <body><div data-role=page id="mainPage" data-theme="b"/> 
 <div data-role="header" class="header"><h1>Gray and White Virtual Cash Register</h1>
-<a  href="shiftReport.php"  data-ajax="false" ><input type="button" id="btnLogout" value="Logout"></a></div>
+<a  href="shiftReport.php"  data-ajax="false" ><input type="button" id="btnLogout" value="Logout"></a>
+<a href="shiftReport.php" data-ajax="false"><input type="button" value="Interim Report"></a></div>
 <div data-role="content">
 <h3> Logged in as <? echo $savedAs ?></h3>
 
