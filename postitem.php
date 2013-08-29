@@ -11,6 +11,8 @@ $quantity = $_GET['quantity'];
 $price = $_GET['price'];
 $tax = $_GET['tax'];
 $amount = $_GET['amount'];
+date_default_timezone_set('America/Detroit');
+$dateStamp=date("Y-m-d H:i:s");
 if($role=='trn')
 {
 echo "Item not posted --Training";
@@ -19,6 +21,7 @@ if($role != 'trn')
 {
 	$sql = "insert into transaction set type=\"$type\",
 			clerkId = \"$clerkId\",
+			date=\"$dateStamp\",
 			deptId = \"$deptId\",
 			pluId = \"$pluId\",
 			descr = \"$descr\",

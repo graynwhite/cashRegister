@@ -1,6 +1,10 @@
 <?php
 require_once("config.inc");
 
+date_default_timezone_set('America/Detroit');
+$dateStamp=date("Y-m-d H:i:s");
+setcookie("loginTime",$dateStamp,time()+7200);
+
 ?>
 
 <!DOCTYPE html> 
@@ -10,7 +14,8 @@ require_once("config.inc");
 	<title>Virtual Cash Register</title> 
 	<?php require_once('meta.inc');?>
 	<script src="mktime.js"></script>
-	
+	<script src="timezonelist.js"></script>
+	<script src="setTimezone.js"></script>
 	<script>
 	
 	
@@ -39,13 +44,14 @@ require_once("config.inc");
 	var clerkName= data.clerkName;
 	var clerkId = data.id;
 	var clerkRole = data.role;
+	date_default_timezone_set ("Detroit");
 	var timelogin=mktime();
 	
 	
 	$.dough("clerkName",clerkName,{ expires: 1 , path: "current" });
 	$.dough("clerkId",clerkId,{ expires: 1 , path: "current" });
 	$.dough("clerkRole",clerkRole,{ expires: 1 , path: "current" });
-	$.dough("loginTime",timelogin, { expires: 1 , path: "current" });
+	//$.dough("loginTime",timelogin, { expires: 1 , path: "current" });
 	
 	
 		$('#actionArea').hide();

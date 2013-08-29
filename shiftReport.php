@@ -4,8 +4,8 @@ require_once("connect.php");
 $clerkName=$_COOKIE['clerkName'];
 $clerkId = $_COOKIE['clerkId'];
 //echo $clerkId;
-$logintime=$_COOKIE['loginTime'];
-$loginDate=date("Y-m-d h:m:s",$logintime);
+$loginDate=$_COOKIE['loginTime'];
+//$loginDate=date("Y-m-d H:m:s",$logintime);
 //echo "<br />Time before deduction " . $loginDate; 
 
 $sql="select * from transaction where date >= \"$loginDate\" && clerkId = \"$clerkId\" order by date";
