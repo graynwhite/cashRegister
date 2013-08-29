@@ -3,7 +3,7 @@ require_once("config.inc");
 require_once("connect.php");
 $savedAs = $_COOKIE['clerkName'];
 $clerkId = $_COOKIE['clerkId'];
-$sql = "select * from PLU order by name";
+$sql = "select * from PLU where active = true order by name";
 $result = mysql_query($sql);
 if(mysql_error() != ""){
 	echo "Trouble with mysql request " . mysql_error() . "<br />" . $sql;
