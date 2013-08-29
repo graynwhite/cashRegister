@@ -7,11 +7,13 @@ $id=$_POST['id'];
 $name=$_POST['name'];
 $deptID=$_POST['deptID'];
 $unitPrice=$_POST['unitPrice'];
+$active=$_POST['active'];
 $overide=$_POST['overide'];
 
 $sql="UPDATE PLU set name= \"$name\",
 unitPrice=\"$unitPrice\",
 deptID=\"$deptID\",
+active=\"$active\",
 overide=\"$overide\"
 where id = \"$id\" ";
 $result=mysql_query($sql);
