@@ -42,6 +42,12 @@
                     width: '10%',
                     
                 },
+				active:{
+                    title: 'Active',
+                    width: '10%',
+                    
+                },
+				
 				overide: {
                     title: 'Overide Price',
                     width: '10%',
