@@ -19,8 +19,12 @@
 			program='deptReport.php';
 			}		
 		console.log("Program  is " + program);
-		
-		$.get(program,function(data){
+		var startdate=$('#startdate').val();
+		var enddate=$('#enddate').val();
+		$.get(program,{
+		startdate: startdate,
+		enddate: enddate
+		},function(data){
 		
 			$('#clearButtonArea').show();
 			$('#returnArea').html(data)
@@ -53,7 +57,7 @@
   <fieldset>
   <legend>Select a period (Optional)</legend>
   <label for='startdate'>Start Date</label>
-  <input type="date" id='startdate' />
+  <input type="date" id='startdate'  />
   <label for='enddate'>End Date</label>
   <input type="date" id="enddate" />
   </fieldset>

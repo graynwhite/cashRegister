@@ -4,8 +4,7 @@ require_once('connect.php');
 $sql = "select t1.pluID, sum(t1.amount) as sales, sum(t1.Tax) as taxAmount, t2.name as itemName  from  transaction as t1,  PLU as t2 where t1.pluId=t2.id  group  by t1.pluId";
 $result = mysql_query($sql);
 if(mysql_error() != ""){
-echo "Problem with query " . $sql . " error message is " . mysql_error();
-quit;		
+echo "Problem with query " . $sql . " error message is " . mysql_error();		
 }
 ?>
 <!DOCTYPE html> 
@@ -13,13 +12,11 @@ quit;
 	<head>
 
 	<title>Virtual Cash Register Sales Report</title> 
-	<? include_once("meta.inc"); ?>
-	
-	
+	<? //include_once("meta.inc"); ?>
 </head> 
 <body>
 <div data-role=page id="mainPage" data-theme="b"/> 
-<div data-role="header" class="header"><h1>Virtual Cash Register</h1></div>
+<!--<div data-role="header" class="header"><h1>Virtual Cash Register</h1></div>-->
 <div data-role="content">
 <h3><?php echo ORGNAME_DEF ?> Sales Report</h3>
 <table class="table table-striped table-bordered table-condensed table-hover">
@@ -47,7 +44,7 @@ echo $line;
 ?>
 </table>
 </div> <!--End of content-->
-<div data-role=footer><h1>Virtual Cash Register</h1></div>
+<!--<div data-role=footer><h1>Virtual Cash Register</h1></div>-->
 </div><!-- End of Page -->
 <!-- ========================== -->
 </body>

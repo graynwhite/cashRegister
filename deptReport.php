@@ -13,19 +13,19 @@ quit;
 	<head>
 
 	<title>Virtual Cash Register Sales Report</title> 
-	<? include_once("meta.inc"); ?>
+	<? //include_once("meta.inc"); ?>
 	
 	
 </head> 
 <body>
 <div data-role=page id="mainPage" data-theme="b"/> 
-<div data-role="header" class="header"><h1>Virtual Cash Register</h1></div>
+<!--<div data-role="header" class="header"><h1>Virtual Cash Register</h1></div>-->
 <div data-role="content">
 <h3><?php echo ORGNAME_DEF ?> Department Report</h3>
 <table class="table table-striped table-bordered table-condensed table-hover">
    <thead>
     <tr> 
-        <th>Clerk</th>
+        <th>Department</th>
 		<th>Tax Amount</th>
         <th>Sales Amount</th>
 
@@ -47,7 +47,7 @@ echo $line;
 ?>
 </table>
 </div> <!--End of content-->
-<div data-role=footer><h1>Virtual Cash Register</h1></div>
+<!--<div data-role=footer><h1>Virtual Cash Register</h1></div>-->
 </div><!-- End of Page -->
 <!-- ========================== -->
 </body>
