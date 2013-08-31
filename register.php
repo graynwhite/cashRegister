@@ -58,7 +58,8 @@ if(mysql_error() != ""){
 	}
 	
 	
-	$(document).ready(function(){ 
+	$(document).ready(function(){
+	console.log("document ready"); 
 	$('#departmentLookup').hide();
 	$('#voidItemArea').hide();
 	$('#voidSaleArea').hide();
