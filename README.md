@@ -23,9 +23,12 @@ System Requirements
 - PHP 
 - MySql
 - javascript enabled
-- nathansearles/Dough
+- Jquery
+- Jqueryui
+- Dough(nathansearles/Dough) for jquery cookies
 - jTable.org
 - Bootstrap (getbootstrap.com)
+- SimpleTest (http://www.simpletest.org/)
 
 
 Things To Do
