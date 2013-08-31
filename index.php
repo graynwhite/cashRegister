@@ -111,13 +111,13 @@ setcookie("loginTime",$dateStamp,time()+7200);
 
 <div id="managerArea">
 <h2>You are logged in as a Manager</h2>
-	<a href="#"><input type="button" id="btnReport" name="btnReport" value="Reports"></a>
+	<a href="reportRequest.php"><input type="button" id="btnReport" name="btnReport" value="Reports"></a>
 	<a href="maintainTrans.php" target="_blank"><input type="button" id="btnTrnsMaint" name="btnTrnsMaint" value="Transaction Maintenance"></a>
 	<a href="maintainClerk.php" target="_blank"><input type="button" id="btnClerkMaint" name="btnClerkMaint" value="Clerk Maintenance"></a>
 	<a href="maintainDept.php" target="_blank"><input type="button" id="btnDeptMaint" name="btnDeptMaint" value="Department Maintenance"></a>
 	<a href="maintainPLU.php" target="_blank"><input type="button" id="btnPLUMaint" name="btnPLUMaint" value="PLU Maintenance"></a>
 	<a href="maintainTax.php" target="_blank"><input type="button" id="btnTaxMaint" name="btnTaxMaint" value="Tax Maintenance"></a>
-	<a href="register.php"><input type="button" value="Cash Register"></a>
+	<a href="http://www.graynwhite.com/cashRegister/register.php" data-ajax="false" target="_blank"><input type="button" value="Cash Register"></a>
 	
 </div>
 </div><!--End of content-->
