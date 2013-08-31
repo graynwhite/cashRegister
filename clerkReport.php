@@ -1,7 +1,15 @@
 <?php
 require_once("config.inc");
 require_once('connect.php');
-$sql = "select t1.pluID, sum(t1.amount) as sales, sum(t1.Tax) as taxAmount, t2.name as itemName  from  transaction as t1,  clerk as t2 where t1.clerkId=t2.id  group  by t1.clerkId";
+require_once('class_getdate.php');
+$gd= new getDate;
+$beginDate = isset($_GET['startdate']) ? $_GET['startdate'] : '';
+$endDate = isset($_GET['enddate']) ? $_GET['enddate'] : '';
+$datesReturned=$gd->getDateHandler($beginDate,$endDate);
+$startDate = $datesReturned[0];
+$stopDate = $datesReturned[1];
+
+$sql = "select t1.pluID, sum(t1.amount) as sales, sum(t1.Tax) as taxAmount, t2.name as itemName  from  transaction as t1,  clerk as t2 where t1.clerkId=t2.id and (date BETWEEN \"$startDate\" AND \"$stopDate\") group  by t1.clerkId";
 $result = mysql_query($sql);
 if(mysql_error() != ""){
 echo "Problem with query " . $sql . " error message is " . mysql_error();		
@@ -19,6 +27,7 @@ echo "Problem with query " . $sql . " error message is " . mysql_error();
 <!--<div data-role="header" class="header"><h1>Virtual Cash Register</h1></div>-->
 <div data-role="content">
 <h3><?php echo ORGNAME_DEF ?> Clerk Report</h3>
+<h4>For the period starting <?php echo substr($startDate,0,10)?> and ending <?php echo substr($stopDate,0,10) ?> </h4>
 <table class="table table-striped table-bordered table-condensed table-hover">
    <thead>
     <tr> 

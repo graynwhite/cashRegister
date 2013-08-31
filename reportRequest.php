@@ -55,7 +55,7 @@
 	</fieldset>
   </div>
   <fieldset>
-  <legend>Select a period (Optional)</legend>
+  <legend>Select a period (Optional defaults to today)</legend>
   <label for='startdate'>Start Date</label>
   <input type="date" id='startdate'  />
   <label for='enddate'>End Date</label>
