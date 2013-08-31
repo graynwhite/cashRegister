@@ -5,6 +5,9 @@
 	<script>
 	$(document).ready(function(){
 	$('#clearButtonArea').hide();
+	 $( document ).bind( "mobileinit", function(){
+    $.mobile.page.prototype.options.degradeInputs.date = true;
+  });	
 	
 		$('#btnGo').click(function(){
 		console.log("go button clicked");
