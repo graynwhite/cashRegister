@@ -179,15 +179,17 @@ if(mysql_error() != ""){
 	});
 	
 	$('#subtotal').click(function(){
-	$('#salesubamount').val(" This sale  amount " + saleamount.toFixed(2) + " tax " + saletaxamount.toFixed(2) + "  Total " + salegrossamount.toFixed(2)); 
+	$('#salesubamount').val(" This sale  amount " + saleamount.toFixed(2) + " tax " + saletaxamount.toFixed(2) + "  Total " + 	salegrossamount.toFixed(2)); 
 	});
 	
 	$('#saleTotal').click(function(){
+	simpleCart.checkout();
 	var change = $('#cashReceived').val() - salegrossamount;
 	$('#change').val(" Change amount $" + change.toFixed(2));
 	saleamount=0;
 	saletaxamount=0;
 	salegrossamount=0;
+	simpleCart.empty();
 	$('#salesubamount').val(''); 
 	});
 	
