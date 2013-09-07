@@ -29,6 +29,7 @@ System Requirements
 - jTable.org
 - Bootstrap (getbootstrap.com)
 - SimpleTest (http://www.simpletest.org/)
+- simpleCart.js (http://simpleCart.org)
 
 
 Things To Do
