@@ -70,13 +70,23 @@
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 	<script src="http://code.jquery.com/jquery-1.6.4.min.js"> </script>
 	<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+	<script>
+	$(document).ready(function(){
+	$("#backbutton")
+      .click(function() {
+            history.go(-1);
+            
+      });
+	  });
+	  </script>
 </head> 
 <body>
 <div data-role=page id="mainPage" data-theme="b"/> 
 <div data-role="header" class="header"><h1>Send Cart</h1></div>
 <div data-role="content">
 <? echo $body ?>
-<a href="simpleCartRegister.php" data-ajax="false"><input type="button" value="Go back to the Virtual Cash Register"<
+<button type="button" onclick="history.back();">Back to Virtual Cash Register</button>
+<!--<input type="button" value="Use your back button to return" id="backbutton">-->
 </div><!--End of content-->
 <div data-role=footer><h1>Send Cart</hi></div>
 </div><!-- End of Page -->

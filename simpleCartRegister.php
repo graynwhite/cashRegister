@@ -183,9 +183,10 @@ if(mysql_error() != ""){
 	});
 	
 	$('#saleTotal').click(function(){
-	simpleCart.checkout();
-	var change = $('#cashReceived').val() - salegrossamount;
+	
+	var change = $('#cashReceived').val() - simpleCart.grandTotal();
 	$('#change').val(" Change amount $" + change.toFixed(2));
+	simpleCart.checkout();
 	saleamount=0;
 	saletaxamount=0;
 	salegrossamount=0;
@@ -232,7 +233,7 @@ if(mysql_error() != ""){
 		
 	-----------------------------<br />
 	Cart Total: <span id="simpleCart_grandTotal" class="simpleCart_grandTotal"></span> <br />
-	<a href="javascript:;" class="simpleCart_checkout">checkout</a>			 
+	<!--<a href="javascript:;" class="simpleCart_checkout">checkout</a>	-->		 
 	    
     <label for="cashReceived">Cash Received</label>
     <input type="number" name="cashReceived" id="cashReceived">
