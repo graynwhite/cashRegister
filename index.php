@@ -106,7 +106,7 @@ setcookie("loginTime",$dateStamp,time()+7200);
 
 <div id="clerkOkArea">
 <h2>You are logged In!</h2>
-<a href="http://www.graynwhite.com/cashRegister/register.php"  data-ajax="false" ><input type="button" value="Continue"></a>
+<a href="http://www.graynwhite.com/cashRegister/simpleCartRegister.php"  data-ajax="false" ><input type="button" value="Continue"></a>
 </div>
 
 <div id="managerArea">
@@ -117,7 +117,7 @@ setcookie("loginTime",$dateStamp,time()+7200);
 	<a href="maintainDept.php" target="_blank"><input type="button" id="btnDeptMaint" name="btnDeptMaint" value="Department Maintenance"></a>
 	<a href="maintainPLU.php" target="_blank"><input type="button" id="btnPLUMaint" name="btnPLUMaint" value="PLU Maintenance"></a>
 	<a href="maintainTax.php" target="_blank"><input type="button" id="btnTaxMaint" name="btnTaxMaint" value="Tax Maintenance"></a>
-	<a href="http://www.graynwhite.com/cashRegister/register.php" data-ajax="false" target="_blank"><input type="button" value="Cash Register"></a>
+	<a href="http://www.graynwhite.com/cashRegister/simpleCartRegister.php" data-ajax="false" target="_blank"><input type="button" value="Cash Register"></a>
 	
 </div>
 </div><!--End of content-->

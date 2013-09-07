@@ -26,7 +26,7 @@
   $tax = $actualDeptid == 1 ? .06 * $amount : 0.00;
   date_default_timezone_set('America/Detroit');
   $timestamp = date('Y-m-d H:i:s');
-  $body .= 'item #'.$i.': ';
+  $body .= '<br />item #'.$i.': ';
   $this_line = "name: " .$content[$name]  .', Qty: ' .$content[$quantity]. ', Price: '  .$content[$price]. ", "   . $content[$dept];
   $this_line .= " Actual dept id  " . $actualDeptid . " actualPluid " . $plu_array[1] . "  actual clerk id " . $clerk_array[1];
   $sql = "insert into transaction set type= \"001\", deptId = \"$actualDeptid\", clerkid = \"$clerk_array[1]\",";
@@ -37,17 +37,18 @@
   
   	
   
-  $body .=$this_line;
-  $body .= '<br />';
+  //$body .=$this_line;
+  //$body .= '<br />';
   $result = mysql_query($sql);
   if(mysql_error() != ''){
-  	echo "<br /> Error with query </br />" . $sql . "<br /> " . mysql_error();
+  	$body.= "<br /> Error with query </br />" . $sql . "<br /> " . mysql_error();
 	quit;
 	}
-	if(mysql_affected_rows($result)<1){
-	echo "<br /> No rows affected </br />" . $sql . "<br /> " . mysql_error();
+	if(mysql_affected_rows()<1){
+	$body .= "<br /> No rows affected </br />" . $sql . "<br /> " . mysql_error();
 	quit;
 	}
+	$body .= " item posted";
   }
  
   $headers = 'From: webmaster@example.com' . "\r\n" .
@@ -75,6 +76,7 @@
 <div data-role="header" class="header"><h1>Send Cart</h1></div>
 <div data-role="content">
 <? echo $body ?>
+<a href="simpleCartRegister.php" data-ajax="false"><input type="button" value="Go back to the Virtual Cash Register"<
 </div><!--End of content-->
 <div data-role=footer><h1>Send Cart</hi></div>
 </div><!-- End of Page -->
