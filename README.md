@@ -31,6 +31,9 @@ System Requirements
 - SimpleTest (http://www.simpletest.org/)
 - simpleCart.js (http://simpleCart.org)
 
+System Possibilities
+--------------------
+With the incorporation simpleCart.js, it is possible to install credit card payments using Paypal, Google Pay, Yahoo Pay, and Amazon.
 
 Things To Do
 ------------------
