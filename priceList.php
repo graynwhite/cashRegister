@@ -1,5 +1,5 @@
 <?php
-require_once("config.inc");
+require_once($_SERVER['DOCUMENT_ROOT']."../../php/cashRegisterConfig.php");
 require_once('connect.php');
 $sql = "select * from PLU order by  name";
 $result = mysql_query($sql);

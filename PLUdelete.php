@@ -1,5 +1,5 @@
 <?
-require_once("config.inc");
+require_once($_SERVER['DOCUMENT_ROOT']."../../php/cashRegisterConfig.php");
 require_once('connect.php');
 //Delete from database
 $result = mysql_query("DELETE FROM PLU WHERE id = " . $_POST["id"] . ";");

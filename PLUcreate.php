@@ -1,6 +1,6 @@
 <?
 //Insert record into database
-require_once("config.inc");
+require_once($_SERVER['DOCUMENT_ROOT']."../../php/cashRegisterConfig.php");
 require_once('connect.php');
 $name=$_POST['name'];
 $deptID=$_POST['deptID'];

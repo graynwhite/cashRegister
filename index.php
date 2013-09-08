@@ -1,5 +1,5 @@
 <?php
-require_once("config.inc");
+require_once($_SERVER['DOCUMENT_ROOT']."../../php/cashRegisterConfig.php");
 
 date_default_timezone_set('America/Detroit');
 $dateStamp=date("Y-m-d H:i:s");
