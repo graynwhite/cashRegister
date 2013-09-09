@@ -39,6 +39,7 @@ Things To Do
 ------------------
 - Automated void and return procedure
 - Spreadsheet output
+- Pop up for items not in the Price Lookup table.
 
  
 System Components
