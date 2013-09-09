@@ -33,7 +33,7 @@ quit;
 <? while($row=mysql_fetch_array($result)){
 	$tax=$row[unitPrice]* .06;
 $line=  "<tr><td>" .$row[name] . "</td><td>" . sprintf('%01.2f',$row[unitPrice]);
-	if($row[deptID]==1){
+	if($row[deptID]!= 3){
 		
 		$line.= " plus tax of " . sprintf('%01.2f',$tax);
 		} 

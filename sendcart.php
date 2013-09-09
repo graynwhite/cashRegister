@@ -22,8 +22,8 @@
   $qty=$content[$quantity];	
   $decr=$content[$name];
   $amount = $content[$price] * $content[$quantity];
-  $pris=$actualDeptid == 1 ? .94 * $content[$price] : $content[$price];
-  $tax = $actualDeptid == 1 ? .06 * $amount : 0.00;
+  $pris=$actualDeptid != 3 ? .94 * $content[$price] : $content[$price];
+  $tax = $actualDeptid != 3 ? .06 * $amount : 0.00;
   date_default_timezone_set('America/Detroit');
   $timestamp = date('Y-m-d H:i:s');
   $body .= '<br />item #'.$i.': ';

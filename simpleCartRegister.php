@@ -134,7 +134,7 @@ if(mysql_error() != ""){
 	var price = $('#price').val();
 	 itemamount= quantity * price;
 	itemtaxamount = 0;
-	if($('#deptid').val() == 1){
+	if($('#deptid').val() != 3){
 	itemtaxamount = itemamount * .06;
 	 itemgrossamount = itemamount * 1.06;
 	 }else{
@@ -229,7 +229,7 @@ if(mysql_error() != ""){
       <? echo $selectPhrase ?>
 	
     </select>
-	<div class="simpleCart_items" ></div>
+	<div class="simpleCart_items" style="font-size:large" ></div>
 		
 	-----------------------------<br />
 	Cart Total: <span id="simpleCart_grandTotal" class="simpleCart_grandTotal"></span> <br />

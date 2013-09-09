@@ -107,7 +107,7 @@ if(mysql_error() != ""){
 	var price = $('#price').val();
 	 itemamount= quantity * price;
 	itemtaxamount = 0;
-	if($('#deptid').val() == 1){
+	if($('#deptid').val() != 3){
 	itemtaxamount = itemamount * .06;
 	 itemgrossamount = itemamount * 1.06;
 	 }else{
