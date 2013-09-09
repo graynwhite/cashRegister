@@ -1,5 +1,5 @@
  <?php
- require_once('config.inc');
+ require_once($_SERVER['DOCUMENT_ROOT']."../../php/cashRegisterConfig.php");
  require_once('connect.php');
   $to = 'cauleyfj64@gmail.com';
   $subject = 'Simple Cart Order';
@@ -85,7 +85,7 @@
 <div data-role="header" class="header"><h1>Send Cart</h1></div>
 <div data-role="content">
 <? echo $body ?>
-<button type="button" onclick="history.back();">Back to Virtual Cash Register</button>
+<button type="button" onClick="history.back();">Back to Virtual Cash Register</button>
 <!--<input type="button" value="Use your back button to return" id="backbutton">-->
 </div><!--End of content-->
 <div data-role=footer><h1>Send Cart</hi></div>

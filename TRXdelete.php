@@ -1,4 +1,5 @@
 <?
+require_once($_SERVER['DOCUMENT_ROOT']."../../php/cashRegisterConfig.php");
 require_once('connect.php');
 //Delete from database
 $result = mysql_query("DELETE FROM transaction WHERE id = " . $_POST['id'] . ";");
