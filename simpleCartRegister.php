@@ -232,7 +232,7 @@ if(mysql_error() != ""){
 	<div class="simpleCart_items" style="font-size:large" ></div>
 		
 	-----------------------------<br />
-	Cart Total: <span id="simpleCart_grandTotal" class="simpleCart_grandTotal"></span> <br />
+	Cart Total: <span id="simpleCart_grandTotal" class="simpleCart_grandTotal" style="font-size:large"></span> <br />
 	<!--<a href="javascript:;" class="simpleCart_checkout">checkout</a>	-->		 
 	    
     <label for="cashReceived">Cash Received</label>
