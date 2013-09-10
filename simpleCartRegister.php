@@ -11,7 +11,7 @@ if(mysql_error() != ""){
 	}
 	$selectPhrase ="<option value=\"0\" > Select an item </option> \n";
 	while($row=mysql_fetch_array($result)){
-	$selectPhrase .= "<option value=\"" . $row['id'] . "\">" . $row['name'] . "</option> \n";
+	$selectPhrase .= "<option value=\"" . $row['id'] . "\">" . "Selected: " . $row['name'] . " <br /> select another</option> \n";
 	}
 	
 $sql2="select * from department order by name";
@@ -80,6 +80,7 @@ if(mysql_error() != ""){
 	 $('#quantity').val(1);
 	 $('#itemamount').val("");
 	 $('#departmentLookup').hide();
+	 $selectPhrase ="<option value=\"0\" > Select an item </option> \n";
 	 
 	 itemamount=0.0;
 	 itemtaxamount=0.0;
@@ -95,7 +96,7 @@ if(mysql_error() != ""){
 	
 	
 	$('#selectPLU').click(function(){
-	console.log("PLU selected");
+	//console.log("PLU selected");
 	var pluid = $('#selectPLU').val();
 	var pluname ="anything";
 	$('#resultItem').html("");
@@ -115,11 +116,11 @@ if(mysql_error() != ""){
 				var pluid = data.id;
 				var clerkid = $.dough('clerkId');
 				var quantity = 1;
-				if(deptid==1){
+				if(deptid!=3){
 				price = 1.06*price;
 				}
 				var thisitem = simpleCart.add({name: name, price:  price, deptid: deptid, pluid: pluid, clerkid: clerkid, quantity:  quantity});	
-				
+				$selectPhrase ="<option value=\"0\" > Select an item </option> \n";
 				} <!-- end of data function -->
 		 )<!-- end of getjson
 		 
@@ -225,6 +226,7 @@ if(mysql_error() != ""){
 	<br />
 	</p> 
     <label for="selectPLU">Price Lookup (Includes tax where applicable)</label>
+	<!--<input type="button" value="Select Item" name="selectPLU" id="selectPLU">-->
     <select name="selctPLU" id="selectPLU">
       <? echo $selectPhrase ?>
 	
