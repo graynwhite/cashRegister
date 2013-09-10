@@ -40,6 +40,7 @@ if(mysql_error() != ""){
 	<!--<link rel="stylesheet" href="../datepicker/jquery.ui.datepicker.mobile.css" /> -->
 	<link rel="stylesheet" href="register.css">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<link href="dispatchPanel.css" rel="stylesheet" type="text/css" />
 	
 	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js">

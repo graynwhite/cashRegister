@@ -1,0 +1,124 @@
+
+#bottomNav {
+	position: fixed;
+	height:50px;
+	width:90%;
+	top:580px;
+	padding:5px;
+	left:30%;
+	font-size:14px;
+	}
+	
+	
+#requestArea {
+	position: fixed;
+	height: 325px;
+	width: 30%;
+	top: 5px;
+	left: 2%;
+	border: medium solid #000000;
+	background-color: #FFFFFF;
+	overflow:scroll;
+	padding:5px;
+}
+#requestAreaDisplay {
+	position: fixed;
+	height: 525px;
+	width: 30%;
+	top: 5px;
+	left: 2%;
+	border: medium solid #000000;
+	background-color: #FFFFFF;
+	overflow:scroll;
+	padding:5px;
+}
+#requestControlArea {
+	position: fixed;
+	height: 200px;
+	width: 30%;
+	top: 350px;
+	left: 2%;
+	border: medium solid #000000;
+	background-color: #FFFFFF;
+	overflow:scroll;
+	padding:5px;
+}
+#vehicleArea {
+	position: fixed;
+	height: 325px;
+	width: 30%;
+	top: 5px;
+	left: 35%;
+	border: medium solid #000000;
+	background-color: #FFFFFF;
+	overflow:scroll;
+	padding:5px;
+}
+#vehicleAreaDisplay {
+	position: fixed;
+	height: 525px;
+	width: 30%;
+	top: 5px;
+	left: 35%;
+	border: medium solid #000000;
+	background-color: #FFFFFF;
+	overflow:scroll;
+	padding:5px;
+}
+#vehicleControlArea {
+	position: fixed;
+	height: 200px;
+	width: 30%;
+	top: 350px;
+	left: 35%;
+	border: medium solid #000000;
+	background-color: #FFFFFF;
+	overflow:scroll;
+	padding:5px;
+}	
+#inProcessArea {
+	position: fixed;
+	height: 325px;
+	width: 30%;
+	top: 5px;
+	left: 67%;
+	border: medium solid #000000;
+	background-color: #FFFFFF;
+	overflow:scroll;
+	padding:5px;
+}
+#inProcessAreaDisplay {
+	position: fixed;
+	height: 525px;
+	width: 30%;
+	top: 5px;
+	left: 67%;
+	border: medium solid #000000;
+	background-color: #FFFFFF;
+	overflow:scroll;
+	padding:5px;
+}
+#resultsArea {
+	position: fixed;
+	height: 200px;
+	width: 30%;
+	top: 350px;
+	left: 67%;
+	border: medium solid #000000;
+	background-color: #FFFFFF;
+	overflow:scroll;
+	padding:5px;
+}
+#footer {
+	position: fixed;
+	height: 300px;
+	width: 95%;
+	top: 550px;
+	left: 0px;
+	border: medium solid #000000;
+	background-color: #FFFFFF;
+	
+}
+#loading {
+	display:none;
+	}
