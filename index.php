@@ -21,55 +21,64 @@ setcookie("loginTime",$dateStamp,time()+7200);
 	
 	$(document).ready(function(){
 	console.log("document ready");
-	$('#actionArea').show();
-	$('#tryAgainArea').hide();
-	$('#clerkOkArea').hide();
-	$('#managerArea').hide();
-	$.dough("clerkName","remove",{ path: "current" });
-	$.dough("clerkId","remove",{ path: "current" });
-	$.dough("clerkRole","remove",{ path: "current" });
-	
-	$('#btnLogin').click(function(){
-	
-	var name = $('#clerkName').val();
-	var pswd = $('#password').val();
-	
-	$.getJSON('validateLogin.php',{
-	name: name,
-	pswd: pswd
-	}, function(data) {
-	$('#returnedClerkName').val(data.clerkName);
-	$('#returnedClerkId').val(data.id);
-	$('#returnedClerkRole').val(data.role);
-	var clerkName= data.clerkName;
-	var clerkId = data.id;
-	var clerkRole = data.role;
-	date_default_timezone_set ("Detroit");
-	var timelogin=mktime();
-	
-	
-	$.dough("clerkName",clerkName,{ expires: 1 , path: "current" });
-	$.dough("clerkId",clerkId,{ expires: 1 , path: "current" });
-	$.dough("clerkRole",clerkRole,{ expires: 1 , path: "current" });
-	//$.dough("loginTime",timelogin, { expires: 1 , path: "current" });
-	
-	
+	console.log("Cookie value " + $.dough("clerkRole"));
+	 if($.dough("clerkRole") == "adm" || $.dough("clerkRole")=="mgr"){
 		$('#actionArea').hide();
-		if(data.role=="mgr"){
-			$('#managerArea').show();
-			}
-		if(data.role=="adm"){
-			$('#managerArea').show();
-			}	
-		if(data.role=="clk"){
-			$('#clerkOkArea').show();
-			}
-		if(data.role=="trn"){
-			$('#clerkOkArea').show();
-			}	
-		if(data.role=="  "){
-			$('#tryAgainArea').show();
-			}		
+		$('#managerArea').show();
+		$('#tryAgainArea').hide();
+		$('#clerkOkArea').hide();
+		}else{
+		$('#actionArea').show();
+		$('#tryAgainArea').hide();
+		$('#clerkOkArea').hide();
+		$('#managerArea').hide();
+		$.dough("clerkName","remove",{ path: "current" });
+		$.dough("clerkId","remove",{ path: "current" });
+		$.dough("clerkRole","remove",{ path: "current" });
+		}
+		
+		$('#btnLogin').click(function(){
+		
+		var name = $('#clerkName').val();
+		var pswd = $('#password').val();
+			
+		$.getJSON('validateLogin.php',{
+		name: name,
+		pswd: pswd
+		}, function(data) {
+		$('#returnedClerkName').val(data.clerkName);
+		$('#returnedClerkId').val(data.id);
+		$('#returnedClerkRole').val(data.role);
+		var clerkName= data.clerkName;
+		var clerkId = data.id;
+		var clerkRole = data.role;
+		date_default_timezone_set ("Detroit");
+		var timelogin=mktime();
+		
+		
+		$.dough("clerkName",clerkName,{ expires: 1 , path: "current" });
+		$.dough("clerkId",clerkId,{ expires: 1 , path: "current" });
+		$.dough("clerkRole",clerkRole,{ expires: 1 , path: "current" });
+		//$.dough("loginTime",timelogin, { expires: 1 , path: "current" });
+		
+		
+			$('#actionArea').hide();
+			if(data.role=="mgr"){
+				$('#managerArea').show();
+				}
+			if(data.role=="adm"){
+				$('#managerArea').show();
+				}	
+			if(data.role=="clk"){
+				$('#clerkOkArea').show();
+				}
+			if(data.role=="trn"){
+				$('#clerkOkArea').show();
+				}	
+			if(data.role=="  "){
+				$('#tryAgainArea').show();
+				}
+					
 		
 		})
 	
@@ -111,7 +120,8 @@ setcookie("loginTime",$dateStamp,time()+7200);
 
 <div id="managerArea">
 <h2>You are logged in as a Manager</h2>
-	<a href="reportRequest.php"><input type="button" id="btnReport" name="btnReport" value="Reports"></a>
+	<a href="priceList.php"><input type="button" value="Price List"></a>
+	<a href="reportRequest.php"><input type="button" id="btnReport" name="btnReport" value=" Sales Reports"></a>
 	<a href="maintainTrans.php" target="_blank"><input type="button" id="btnTrnsMaint" name="btnTrnsMaint" value="Transaction Maintenance"></a>
 	<a href="maintainClerk.php" target="_blank"><input type="button" id="btnClerkMaint" name="btnClerkMaint" value="Clerk Maintenance"></a>
 	<a href="maintainDept.php" target="_blank"><input type="button" id="btnDeptMaint" name="btnDeptMaint" value="Department Maintenance"></a>

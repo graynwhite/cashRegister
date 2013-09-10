@@ -12,11 +12,15 @@
 	
 	$('#sendMailButton').click(function(){
 	$.post("sendMail.php",{
-	email: "allie807@comcast.net",
+	<!--email: "allie807@comcast.net",-->
+	email: "cauleyfj64@gmail.com",
 	subject: "Shift Report",
 	message: $('#logoutReportArea').html()
 	},function(data){
 	$('#mailReturnMessage').html(data);
+	$.dough("clerkName","remove",{ path: "current" });
+	$.dough("clerkId","remove",{ path: "current" });
+	$.dough("clerkRole","remove",{ path: "current" });
 	})
 	});
 	
