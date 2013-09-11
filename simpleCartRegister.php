@@ -39,17 +39,12 @@ if(mysql_error() != ""){
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 	<!--<link rel="stylesheet" href="../datepicker/jquery.ui.datepicker.mobile.css" /> -->
 	<link rel="stylesheet" href="register.css">
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css"/>
 	<link href="dispatchPanel.css" rel="stylesheet" type="text/css" />
 	
 	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js">
-	<!--<script src-"http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>-->	
-	<!--<script language="javascript" src="../jsound/jsound/jquery18.js"></script>
-	<script language="javascript" src="../jsound/jsound/jsound.js"></script>-->
-	<!--<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>-->
-	<script src="../datepicker/jQuery.ui.datepicker.js"></script>
-  	<script src="../datepicker/jquery.ui.datepicker.mobile.js"></script>
+	<script src="http://www.graynwhite.com/taxi/jqueryPopUp.js"></script>
 	<script src="../dough/Dough/dough.js"></script>
 	<script>
   //reset type=date inputs to text
@@ -99,6 +94,7 @@ if(mysql_error() != ""){
 	$('#departmentLookup').hide();
 	$('#voidItemArea').hide();
 	$('#voidSaleArea').hide();
+	$('#unlistedItemsArea').hide();
 	
 	
 	$('#selectPLU').click(function(){
@@ -125,8 +121,12 @@ if(mysql_error() != ""){
 				if(deptid!=3){
 				price = 1.06*price;
 				}
+				if(pluid !='48'){
 				var thisitem = simpleCart.add({name: name, price:  price, deptid: deptid, pluid: pluid, clerkid: clerkid, quantity:  quantity});	
 				$selectPhrase ="<option value=\"0\" > Select an item </option> \n";
+				}else{
+				$('#unlistedItemsArea').show();
+				}
 				} <!-- end of data function -->
 		 )<!-- end of getjson
 		 
@@ -134,7 +134,22 @@ if(mysql_error() != ""){
 	} <!-- End of if statement --.	
 	
 	});<!-- End of selectPLU -->
-
+	$('#unlistedSubmit').click(function(){
+	var name = $('#unlistedName').val();
+	var price = $('#unlistedPrice').val();
+	var deptid = 3;
+	var pluid = 48;
+	var clerkid = $.dough('clerkId');
+	var quantity = 1;
+	deptid = $('#unlistTax').prop('checked') ? 1 : deptid;
+	deptid = $('#unlistDonate').prop('checked') ? 2 : deptid;
+	console.log("value of deptid " + deptid);
+	price = deptid != 3 ?price * 1.06  :price;
+	console.log("price is " + price);	
+	var thisitem = simpleCart.add({name: name, price:  price, deptid: deptid, pluid: pluid, clerkid: clerkid, quantity:  quantity});	
+	$('#unlistedItemsArea').hide();
+	});	
+	
 	$('#enter').click(function(){
 	console.log("enter clicked");
 	var quantity = $('#quantity').val();
@@ -239,6 +254,22 @@ if(mysql_error() != ""){
     </select>
 	<div id="managerArea">
 	<a href="index.php" data-ajax=false><input type="button" value="Manager Options"></a>
+	</div>
+	<div id="unlistedItemsArea" class="example4demo">
+	<h3>Unlisted Item Input</h3>
+	<form id="unlistedForm">
+	<label for="unlistedName">Name of item</label>
+	<input type="text" id="unlistedName">
+	<label for unlistedPrice>Price</label>
+	<input type="text" id="unlistedPrice">
+	<fieldset data-role="controlgroup" data-type="horizontal">
+		<input type="radio" name="rcaction" id="unlistTax" value="Taxable" /><label for="unlistTax">Taxable</label>
+	<input type="radio" name="rcaction" id="unlistDonate" value="Donated" /><label for="unlistDonate">Donated</label>
+	<input type="radio" name="rcaction" id="unlistFood"  value="Food" checked="checked"/><label for="unlistFood">Food</label>
+	</fieldset>
+	<input type="button" id="unlistedSubmit" value="Submit unlisted item data">
+	
+	</form>
 	</div>
 	<div class="simpleCart_items" style="font-size:large" ></div>
 		
