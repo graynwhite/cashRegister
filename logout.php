@@ -20,7 +20,7 @@
 	$('#mailReturnMessage').html(data);
 	$.dough("clerkName","remove",{ path: "current" });
 	$.dough("clerkId","remove",{ path: "current" });
-	$.dough("clerkRole","remove",{ path: "current" });
+	$.dough("clerkRole","remove");
 	})
 	});
 	
