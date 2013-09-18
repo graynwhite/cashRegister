@@ -17,12 +17,7 @@
 	<script src="../datepicker/jQuery.ui.datepicker.js"></script>
   	<script src="../datepicker/jquery.ui.datepicker.mobile.js"></script>
 	<script src="../dough/Dough/dough.js"></script>
-	<script>
-  //reset type=date inputs to text
-  $( document ).bind( "mobileinit", function(){
-    $.mobile.page.prototype.options.degradeInputs.date = true;
-  });	
-</script>
+	
 	
   
 	
