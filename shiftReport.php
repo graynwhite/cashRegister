@@ -40,7 +40,7 @@ $html .= "<tr><td> Total  </td><td> " . number_format($totalTax, 2, '.', ',') . 
 <html> 
 	<head>
 
-	<title>Virtual Cash Register Sales Report</title> 
+	<title>Virtual Cash Register Shift Report</title> 
 	<? include_once("meta.inc"); ?>
 	
 	
