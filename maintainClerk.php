@@ -22,7 +22,7 @@
                 listAction: 'Clerklist.php',
                 createAction: 'Clerkcreate.php',
                 updateAction: 'Clerkupdate.php',
-                deleteAction: 'Clerkdelete.php'
+                //deleteAction: 'Clerkdelete.php'
             },
             fields: {
                 id: {
@@ -39,6 +39,11 @@
                 },
                 role: {
                     title: 'Role',
+                    width: '10%',
+                    
+                },
+				active: {
+                    title: 'Active',
                     width: '10%',
                     
                 },

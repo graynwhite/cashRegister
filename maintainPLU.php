@@ -21,8 +21,8 @@
             actions: {
                 listAction: 'PLUlist.php',
                 createAction: 'PLUcreate.php',
-                updateAction: 'PLUupdate.php',
-                deleteAction: 'PLUdelete.php'
+                updateAction: 'PLUupdate.php'
+                //deleteAction: 'PLUdelete.php'
             },
             fields: {
                 id: {
