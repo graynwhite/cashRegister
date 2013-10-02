@@ -3,8 +3,9 @@ require_once($_SERVER['DOCUMENT_ROOT']."../../php/cashRegisterConfig.php");
 
 date_default_timezone_set('America/Detroit');
 $dateStamp=date("Y-m-d H:i:s");
+if(!isset($_COOKIE['loginTime'])){
 setcookie("loginTime",$dateStamp,time()+7200);
-
+}
 ?>
 
 <!DOCTYPE html> 

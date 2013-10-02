@@ -64,6 +64,7 @@ $html .= "<tr><td> Total  </td><td> " . number_format($totalTax, 2, '.', ',') . 
 	$.dough("clerkName","remove",{ path: "current" });
 	$.dough("clerkId","remove",{ path: "current" });
 	$.dough("clerkRole","remove");
+	$.dough("loginTime","remove");
 	})
 	});
 	
