@@ -1,7 +1,7 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT']."../../php/cashRegisterConfig.php");
 require_once('connect.php');
-$sql = "select * from PLU order by  name";
+$sql = "select * from PLU where active=true order by  name";
 $result = mysql_query($sql);
 if(mysql_error() != ""){
 echo "Problem with query " . $sql . "error message is " . mysql_error();

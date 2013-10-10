@@ -11,8 +11,9 @@ CREATE TABLE PLU
 	id INTEGER NOT NULL AUTO_INCREMENT,
 	name CHAR(10),
 	deptID INTEGER,
-	unitPrice DECIMAL(10),
+	unitPrice DECIMAL(10,3),
 	overide BOOL DEFAULT true COMMENT 'Allow price overide by clerk',
+	active BOOL DEFAULT true comment ' Item is active',
 	PRIMARY KEY (id)
 ) 
 ;
