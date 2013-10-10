@@ -11,7 +11,7 @@ if(mysql_error() != ""){
 	}
 	$selectPhrase ="<option value=\"0\" > Select an item </option> \n";
 	while($row=mysql_fetch_array($result)){
-	$selectPhrase .= "<option value=\"" . $row['id'] . "\">" . "Selected: " . $row['name'] . " <br /> select another</option> \n";
+	$selectPhrase .= "<option value=\"" . $row['id'] . "\">" .  $row['name'] . "</option> \n";
 	}
 	
 $sql2="select * from department order by name";
@@ -249,7 +249,7 @@ if(mysql_error() != ""){
     <label for="selectPLU">Price Lookup (Includes tax where applicable)</label>
 	<!--<input type="button" value="Select Item" name="selectPLU" id="selectPLU">-->
     <select name="selctPLU" id="selectPLU">
-      <? echo $selectPhrase ?>
+      <? echo   $selectPhrase  ?>
 	
     </select>
 	<div id="managerArea">
