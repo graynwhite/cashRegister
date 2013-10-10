@@ -15,12 +15,14 @@ echo mysql_error();
 }
 $html="<h3>for $clerkName : shift beginning  $loginDate </h3>";
 
+$totalItems=0;
 $totalTax=0;
 $totalAmount=0;
 $html .=" <table class=\"table table-striped table-bordered table-condensed table-hover\">
    <thead>
     <tr> 
         <th>Item Name</th>
+		<th>Qty</th>
 		<th>Tax Amount</th>
         <th>Sales Amount</th>
 
@@ -28,13 +30,14 @@ $html .=" <table class=\"table table-striped table-bordered table-condensed tabl
     </thead>";
 while($row=mysql_fetch_array($result)){
 
-$html.= "<tr><td>" . $row['descr'] . "</td><td>" . number_format($row['tax'], 2, '.', ','). "</td><td>" . number_format($row['amount'], 2, '.', ','). "</td></tr>";
+$html.= "<tr><td>" . $row['descr'] . "</td><td>" . number_format($row['quantity'], 0, '.', ','). "</td><td>" . number_format($row['tax'], 2, '.', ','). "</td><td>" . number_format($row['amount'], 2, '.', ','). "</td></tr>";
 $totalTax += $row['tax'];
+$totalItems +=$row['quantity'];
 $totalAmount += $row['amount'];
 }
 
 
-$html .= "<tr><td> Total  </td><td> " . number_format($totalTax, 2, '.', ',') . "</td><td>" . number_format($totalAmount, 2, '.', ','). "</td></tr></table>";
+$html .= "<tr><td> Total  </td><td> " . number_format($totalItems, 0, '.', ',') . "</td><td> " . number_format($totalTax, 2, '.', ',') . "</td><td>" . number_format($totalAmount, 2, '.', ','). "</td></tr></table>";
 
 ?>
 <html> 
