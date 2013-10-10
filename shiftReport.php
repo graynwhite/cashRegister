@@ -23,8 +23,8 @@ $html .=" <table class=\"table table-striped table-bordered table-condensed tabl
     <tr> 
         <th>Item Name</th>
 		<th>Qty</th>
-		<th>Tax Amount</th>
-        <th>Sales Amount</th>
+		<th>Tax $</th>
+        <th>Sales $</th>
 
     </tr>
     </thead>";
