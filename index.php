@@ -4,7 +4,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."../../php/cashRegisterConfig.php");
 date_default_timezone_set('America/Detroit');
 $dateStamp=date("Y-m-d H:i:s");
 if(!isset($_COOKIE['loginTime'])){
-setcookie("loginTime",$dateStamp,time()+7200);
+setcookie("loginTime",$dateStamp,time()+10800);
 }
 ?>
 
@@ -57,9 +57,11 @@ setcookie("loginTime",$dateStamp,time()+7200);
 		var timelogin=mktime();
 		
 		
-		$.dough("clerkName",clerkName,{ expires: 1 , path: "current" });
-		$.dough("clerkId",clerkId,{ expires: 1 , path: "current" });
-		$.dough("clerkRole",clerkRole,{ expires: 1 , path: "current" });
+		$.dough("clerkName",clerkName,{ expires: .125 , path: "current" });
+		$.dough("clerkId",clerkId,{ expires: .125 , path: "current" });
+		$.dough("clerkRole",clerkRole,{ expires: .125 , path: "current" });
+		
+		
 		//$.dough("loginTime",timelogin, { expires: 1 , path: "current" });
 		
 		
