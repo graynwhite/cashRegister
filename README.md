@@ -1,25 +1,29 @@
 System overview
 ==================
-The Virtual Cash Register System was written to provide a simple alternative to a paper driven procedure. Searching the internet for inexpensive cash registers that could be easily moved, netted no results. Any software found was tied to a particular hardware device or some other accounting software. Therefore, the following criteria was used to develop the Virtual Cash Register.
+The Virtual Cash Register System was written to provide a simple alternative to a paper driven procedure.  Searching the internet for inexpensive cash registers that could be easily moved, netted no results. Any software found was tied to a particular hardware device or some other accounting software.
+
+Both accounting and marketing requirements were addressed. Accounting wants control and financial information, they do not need information about products sold whereas the marketing people need that information.
+
+ Therefore, the following criteria was used to develop the Virtual Cash Register.
 
 - Simplicity
 - Minimum Security
 - Portability
 
-The system was developed with the idea that other organizations might want to use some components of the system. We will be submitting this system to Github and PHP,both open source enablers,so that others can use and improve the system.
+The system was developed with the idea that other organizations might want to use some components of the system. We submitted this system to Github and PHP,both open source enablers,so that others can use and improve the system.
 System features
 ------------------
-- Price look-up for items
-- Automatic Sales Tax computation
-- Allows manual entry of items not on the look-up list
+- Price look-up for items.
+- Automatic  Michigan Sales Tax computation. (SimpleCart has other tax plans)
+- Allows manual entry of items not on the look-up list.
 - Provides product movement visibility.
-- Provides purchased product accountability
+- Provides purchased product accountability.
 
 System Requirements
 ------------------
 - Devices that can connect to the internet.
 - Devices that have javascript enabled (desktops, laptops, tablets and cell phones)
-- Trained Virtual Cash Register users or a person to transcribe the paper records.
+- Trained Virtual Cash Register users or a person to transcribe the paper records after the shift.
 - PHP 
 - MySql
 - javascript enabled
