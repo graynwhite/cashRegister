@@ -20,7 +20,10 @@
 			}
 		if($('#radio3').prop('checked')){
 			program='deptReport.php';
-			}		
+			}
+		if($('#radio4').prop('checked')){
+			program='dailyReport.php';
+			}				
 		console.log("Program  is " + program);
 		var startdate=$('#startdate').val();
 		var enddate=$('#enddate').val();
@@ -55,6 +58,7 @@
     <input type="radio" id="radio1" name="radio" /><label for="radio1">Product</label>
     <input type="radio" id="radio2" name="radio" checked="checked" /><label for="radio2">Clerk</label>
     <input type="radio" id="radio3" name="radio" /><label for="radio3">Department</label>
+	<input type="radio" id="radio4" name="radio" /><label for="radio4">Sales Tax</label>
 	</fieldset>
   </div>
   <fieldset>
