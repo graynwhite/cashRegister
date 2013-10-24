@@ -35,21 +35,27 @@ quit;
    <thead>
     <tr> 
         <th>Department</th>
+		<th>Taxable</th>
+		<th>Non-Tax</th>
 		<th>Tax Amount</th>
         <th>Sales Amount</th>
 
     </tr>
     </thead>
 <? while($row=mysql_fetch_array($result)){
-	
-$line=  "<tr><td>" .$row[itemName] . "</td><td>" . sprintf('%01.2f',$row[taxAmount]);
+$taxable = $row['taxAmount']==0 ? 0.00 :  $row['taxAmount']/.06;
+
+$notax = $row['sales']-($taxable + $row['taxAmount']);		
+$line=  "<tr><td>" .$row[itemName] .  "</td><td>" . sprintf('%01.2f',$taxable)."</td><td>" . sprintf('%01.2f',$notax)."</td><td>" . sprintf('%01.2f',$row[taxAmount]);
 $line .= "</td><td>" . sprintf('%01.2f',$row[sales]); 	
 		$line .= "</td></tr>";
+$totalTaxable += $taxable;
+$totalNonTax += $notax;			
 $totalTax += $row['taxAmount'];
 $totalAmount += $row['sales'];		
 echo $line; 
 }
-$line=  "<tr><td>" . "Total" . "</td><td>" . sprintf('%01.2f',$totalTax);
+$line=  "<tr><td>" . "Total" . "</td><td>" . sprintf('%01.2f',$totalTaxable). "</td><td>" . sprintf('%01.2f',$totalNonTax)."</td><td>" . sprintf('%01.2f',$totalTax);
 $line .= "</td><td>" . sprintf('%01.2f',$totalAmount); 	
 		$line .= "</td></tr>";
 echo $line;		

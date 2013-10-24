@@ -23,21 +23,27 @@ $html .=" <table class=\"table table-striped table-bordered table-condensed tabl
     <tr> 
         <th>Item Name</th>
 		<th>Qty</th>
+		<th>Taxable</th>
+		<th>Non-tax</th>
 		<th>Tax $</th>
         <th>Sales $</th>
 
     </tr>
     </thead>";
 while($row=mysql_fetch_array($result)){
+$taxable = $row['tax']==0 ? 0.00 :  $row['tax']/.06;
 
-$html.= "<tr><td>" . $row['descr'] . "</td><td>" . number_format($row['quantity'], 0, '.', ','). "</td><td>" . number_format($row['tax'], 2, '.', ','). "</td><td>" . number_format($row['amount'], 2, '.', ','). "</td></tr>";
+$notax = $row['amount']-($taxable + $row['tax']);
+$html.= "<tr><td>" . $row['descr'] . "</td><td>" . number_format($row['quantity'], 0, '.', ',')."</td><td>" . number_format($taxable, 2, '.', ','). "</td><td>" . number_format($notax, 2, '.', ',').  "</td><td>" . number_format($row['tax'], 2, '.', ','). "</td><td>" . number_format($row['amount'], 2, '.', ','). "</td></tr>";
+$totalTaxable += $taxable;
+$totalNonTax += $notax;	
 $totalTax += $row['tax'];
 $totalItems +=$row['quantity'];
 $totalAmount += $row['amount'];
 }
 
 
-$html .= "<tr><td> Total  </td><td> " . number_format($totalItems, 0, '.', ',') . "</td><td> " . number_format($totalTax, 2, '.', ',') . "</td><td>" . number_format($totalAmount, 2, '.', ','). "</td></tr></table>";
+$html .= "<tr><td> Total  </td><td> " . number_format($totalItems, 0, '.', ',') . "</td><td> ". number_format($totalTaxable, 2, '.', ',') . "</td><td> ". number_format($totalNonTax, 2, '.', ',') ."</td><td> ". number_format($totalTax, 2, '.', ',') . "</td><td>" . number_format($totalAmount, 2, '.', ','). "</td></tr></table>";
 
 ?>
 <html> 
