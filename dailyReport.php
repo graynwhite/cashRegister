@@ -20,14 +20,14 @@ echo "Problem with query " . $sql . " error message is " . mysql_error();
 <html> 
 	<head>
 
-	<title>Virtual Cash Register Sales Report</title> 
+	<title>Virtual Cash Register Sales Tax Report</title> 
 	<? //include_once("meta.inc"); ?>
 </head> 
 <body>
 <div data-role=page id="mainPage" data-theme="b"/> 
 <!--<div data-role="header" class="header"><h1>Virtual Cash Register</h1></div>-->
 <div data-role="content">
-<h3><?php echo ORGNAME_DEF ?> Sales Report</h3>
+<h3><?php echo ORGNAME_DEF ?> Sales Tax Report</h3>
 <h4>For the period starting <?php echo substr($startDate,0,10)?> and ending <?php echo substr($stopDate,0,10) ?> </h4>
 <table class="table table-striped table-bordered table-condensed table-hover">
    <thead>
