@@ -92,7 +92,9 @@ This file must be created at implementation time and it should contain the follo
 - define('WEBMASTER_ADDRESS' , 'your webmasters email address');
 
 
-
+Proxy Entry
+-----------
+This system is designed to capture transactions as they occur by the operator of the Virtual Cash Register which not only provides the accounting control but also provides marketing information. However, the Proxy Entry function allows some authorized person to enter only the accounting information from the paper shift reports provided by operators who either lack the hardware, and/or skill to use the Virtual Cash Register, at a later time.
 
 
 
