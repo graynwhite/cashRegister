@@ -124,6 +124,7 @@ setcookie("loginTime",$dateStamp,time()+10800);
 <div id="managerArea">
 <h2>You are logged in as a Manager</h2>
 	<a href="priceList.php"><input type="button" value="Price List"></a>
+	<a href="proxy.php"><input type="button" value="Entry by Proxy"></a>
 	<a href="reportRequest.php"><input type="button" id="btnReport" name="btnReport" value=" Sales Reports"></a>
 	<a href="maintainTrans.php" target="_blank"><input type="button" id="btnTrnsMaint" name="btnTrnsMaint" value="Transaction Maintenance"></a>
 	<a href="maintainClerk.php" target="_blank"><input type="button" id="btnClerkMaint" name="btnClerkMaint" value="Clerk Maintenance"></a>

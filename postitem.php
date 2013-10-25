@@ -1,6 +1,7 @@
 <?
 require_once($_SERVER['DOCUMENT_ROOT']."../../php/cashRegisterConfig.php");
 require_once("connect.php");
+$dateStamp=$_GET['dateId'];
 $type=$_GET['type'];
 $role=$_GET['role'];
 $clerkId = $_GET['clerkId'];
