@@ -7,10 +7,12 @@ $name=$_POST['name'];
 $password=$_POST['password'];
 $role=$_POST['role'];
 $phone=$_POST['phone'];
+$active=$_POST['active'];
 
 $sql="UPDATE clerk set name= \"$name\",
 password=\"$password\",
-role=\"$role\",
+role=\"$role\", 
+active=\"$active\",
 phone=\"$phone\"
  where id = \"$id\" ";
  $result=mysql_query($sql);
