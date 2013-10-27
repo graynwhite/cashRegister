@@ -37,13 +37,14 @@ System Requirements
 
 System Possibilities
 --------------------
-With the incorporation simpleCart.js, it is possible to install credit card payments using Paypal, Google Pay, Yahoo Pay, and Amazon.
+With the incorporation simpleCart.js, it is possible to install credit card payments using Paypal, Google Pay, Yahoo Pay, or Amazon.
 
 Things To Do
 ------------------
 - Automated void and return procedure
 - Spreadsheet output
-- Pop up for items not in the Price Lookup table.
+- Apply discount to cart.
+- Apply discount to item.
 
  
 System Components
