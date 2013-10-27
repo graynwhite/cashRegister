@@ -85,7 +85,7 @@ This file must be created at implementation time and it should contain the follo
 - define('ORGZIP_DEF' , 'zip');
 - define('ORG_TOP_PHRASE' , 'A phrase that you would want to be on top of a printed receipt');
 - define('ORG_BOTTOM_PHRASE' , 'A Phrase that you would want to be on the bottom of a printed receipt');
-- define('HOST_SERVER', 'The jost server');
+- define('HOST_SERVER', 'The host server');
 - define('DATABASE_USERNAME', 'username');
 - define('DATABASE_PASSWORD', 'password');
 - define('DATABASE_NAME' , 'data base name');

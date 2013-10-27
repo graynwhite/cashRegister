@@ -229,7 +229,48 @@ if(mysql_error() != ""){
 	 
 	}); 
 	</script>
-</head> 
+    <style type="text/css">
+<!--
+.item_decrement{
+	width: 40px
+	}
+.simpleCart_decrement {
+	background-color: #FF0000;
+	width: 40px;
+	color: #FFFFFF;
+	height: auto;
+	padding-right: 9px;
+	padding-left: 9px;
+	font-size: 24px;
+	text-decoration:none;
+	
+}
+.simpleCart_grandTotal {
+	border-top-style: ridge;
+	border-right-style: ridge;
+	border-bottom-style: ridge;
+	border-left-style: ridge;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+	padding: 2px;
+}
+.simpleCart_increment {
+	background-color: #00FF00;
+	width: 32px;
+	color: #FFFFFF;
+	height: auto;
+	padding-right: 8px;
+	padding-left: 8px;
+	font-size: 24px;
+	text-decoration:none;
+	
+}
+
+-->
+    </style>
+    </head> 
 <body><div data-role=page id="mainPage" data-theme="b"/> 
 <div data-role="header" class="header"><h1>Gray and White Virtual Cash Register</h1>
 <a  href="shiftReport.php"  data-ajax=false ><input type="button" id="btnLogout" value="Logout"></a>
@@ -270,7 +311,7 @@ if(mysql_error() != ""){
 	<input type="button" id="unlistedSubmit" value="Submit unlisted item data">
 	
 	</form>
-	</div>
+</div>
 	<div class="simpleCart_items" style="font-size:large" ></div>
 		
 	-----------------------------<br />
