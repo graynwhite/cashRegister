@@ -56,7 +56,7 @@ $html .= "<tr><td> Total  </td><td> " . number_format($totalTax, 2, '.', ',') . 
 	$('#sendMailButton').click(function(){
 	$.post("sendMail.php",{
 	<!--email: "allie807@comcast.net",-->
-	email: "cauleyfj64@gmail.com",
+	email: "cauleyfrank@gmail.com",
 	subject: "Shift Report",
 	message: $("#shiftReportArea").html()
 	},function(data){
