@@ -31,27 +31,27 @@ System Requirements
 - Jqueryui
 - Dough(nathansearles/Dough) for jquery cookies
 - jTable.org
-- Bootstrap (getbootstrap.com)
+- Bootstrap (getbootstrap.com)?
 - SimpleTest (http://www.simpletest.org/)
 - simpleCart.js (http://simpleCart.org)
 
 System Possibilities
 --------------------
-With the incorporation simpleCart.js, it is possible to install credit card payments using Paypal, Google Pay, Yahoo Pay, or Amazon.
+With the incorporation of latest simpleCart.js, it is possible to install credit card payments using Paypal, Google Pay, Yahoo Pay, or Amazon.
 
 Things To Do
 ------------------
 - Automated void and return procedure
 - Spreadsheet output
-- Apply discount to cart.
-- Apply discount to item.
+- Apply discounts to cart.
+- Apply discounts to item.
 
  
 System Components
 ================== 
 Clerk file
 ------------------
-Has fields for name, password, phone number and role. There are presently three roles, clerk, manager and administrator.
+Has fields for name, password, phone number and role. There are presently three roles, clerk, manager and administrator(webmaster).
 Department File
 ------------------
 Has fields for name and tax calculation data.
@@ -90,7 +90,12 @@ This file must be created at implementation time and it should contain the follo
 - define('DATABASE_USERNAME', 'username');
 - define('DATABASE_PASSWORD', 'password');
 - define('DATABASE_NAME' , 'data base name');
-- define('WEBMASTER_ADDRESS' , 'your webmasters email address');
+- define('WEBMASTER_NAME' , 'webmasters name');
+- define('WEBMASTER_ADDRESS' , 'your webmasters address');
+- define('WEBMASTER_EMAIL' , 'Your webmasters email address');
+- define('MANAGER_NAME' , 'Your managers name');
+- define('MANAGER_ADDRESS' , 'your managers address');
+- define('MANAGER_EMAIL' ,   'Your managers email address');
 
 
 Proxy Entry
@@ -104,7 +109,7 @@ Index screen
 ![Index screen](http://www.graynwhite.com/cashRegister/indexLogin.png "Index screen")
 - controls log in validation
 - Provides Managers with reporting and control features.
-![](http://www.graynwhite.com/cashRegister/indexManager.png "Manager screen")
+![Manager scren](http://www.graynwhite.com/cashRegister/indexManager.png "Manager screen")
 
 
 Register screen
@@ -112,6 +117,6 @@ Register screen
 ![Register Screen](http://www.graynwhite.com/cashRegister/register.png "Register")
 Provides register personnel with transaction input capabilities and a log out button to end their shift.
 
-Log out screen
+![Log out screen]
 ------------------
 Presents a mini-report of the actions taken during their shift and a button to send the information to their manager.
