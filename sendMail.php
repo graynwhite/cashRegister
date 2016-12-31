@@ -9,8 +9,8 @@ $subject = $_POST['subject'];
 $message = $_POST['message'];
 
 /* PHP form validation: the script checks that the Email field contains a valid email address and the Subject field isn't empty. preg_match performs a regular expression match. It's a very powerful PHP function to validate form fields and other strings - see PHP manual for details. */
-$headers = "From: cauleyfj@graynwhite.com \r\n";
-$headers .= "Reply-To: cauleyfj@graynwhite.com\r\n";
+$headers = "From: cauleyfrank@gmail.com \r\n";
+$headers .= "Reply-To: cauleyfrank@gmail.com\r\n";
 $headers .= "CC: cauleyfj64@gmail.com\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=UTF-8\r\n";

@@ -13,7 +13,8 @@ setcookie("loginTime",$dateStamp,time()+10800);
 	<head>
 
 	<title>Virtual Cash Register</title> 
-	<?php require_once('meta.inc');?>
+	<?php 
+		require_once('meta.inc');?>
 	<script src="mktime.js"></script>
 	<script src="timezonelist.js"></script>
 	<script src="setTimezone.js"></script>
